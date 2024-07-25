@@ -41,6 +41,21 @@ def get_user_details():
 
 
     details_str = name_str, mobile_str, email_str
-    print(details_str)
+    data_validation(details_str)
+    #print(details_str)
 
-get_user_details()   
+#get_user_details() 
+
+def data_validation(details):
+    """
+    Converts strings to integers and integers to strings.
+    Raises ValueError if conversion fails or if mobile and email format incorrect.
+    """
+    try:
+        if len(mobile_str) != 11:
+            raise ValueError(
+                f'Your mobile number needs to be 11 digits. You provided {len(details)}. Please enter a valid UK mobile number.')
+    except ValueError as e:
+        print(f'Invalid data: {e}, please try again.\n')     
+               
+get_user_details()
