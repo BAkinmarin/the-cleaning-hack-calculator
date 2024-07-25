@@ -28,14 +28,19 @@ def hello_user():
 
     choice_str = input('Do you wish to continue? Y or N: ')
     
-hello_user()
+#hello_user()
 
 def get_user_details():
     """
     Get details personal details from user and add to sheet.
     """
+    details_str = []
     name_str = input('\nEnter your name: ')
     mobile_str = input('Enter your mobile number: ')
     email_str = input('Enter your email address: ')
+
+
+    details_str = name_str, mobile_str, email_str
+    print(details_str)
 
 get_user_details()   
