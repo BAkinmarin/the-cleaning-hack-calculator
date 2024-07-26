@@ -35,38 +35,49 @@ def get_user_details():
     """
     Get details personal details from user and add to sheet.
     """
-    details_str = []
-    name_str = input('Enter your name: ')
-    mobile_str = input('Enter your mobile number: ')
-    email_str = input('Enter your email address: ')
+    while True:
+        details_str = []
+        name_str = input('Enter your name: ')
+        mobile_str = input('Enter your mobile number: ')
+        email_str = input('Enter your email address: ')
 
-    details_str = name_str, mobile_str, email_str
-    validate_user_mobile(mobile_str)
-    validate_user_email(email_str)  
+        details_str = name_str, mobile_str, email_str
+
+        if validate_user_mobile(mobile_str) and validate_user_email(email_str):
+            print('Thank you for providing your details!')
+            break
+
+    return details_str    
                
-def validate_user_mobile(mobile):
+def validate_user_mobile(mobile_str):
     """
     Converts strings to integers.
     Raises ValueError if conversion fails.
     Checks mobile number is 11 digits long.
     """
     try:
-        if len(mobile) != 11:
-            raise ValueError(f'Your mobile number needs to be 11 digits. You entered {len(mobile)}')
+        if len(mobile_str) != 11:
+            raise ValueError(f'Your mobile number needs to be 11 digits. You entered {len(mobile_str)}')
     except ValueError as e:
-        print(f'Invalid Mobile Number: {e}. Please enter a valid UK number.\n')   
+        print(f'Invalid Mobile Number: {e}. Please enter a valid UK number.\n')
+        return False
 
-def validate_user_email(email):
+    return True    
+
+def validate_user_email(email_str):
     """
     Checks that email syntax provided is valid.
     Raises EmailNotValidError if validation fails.
     """
     try:
-        email_format = validate_email(email)  # validate and get info
+        email_format = validate_email(email_str)  # validate and get info
         email = email_format.normalized  # replace with normalized form
     except EmailNotValidError as e:
         # email is not valid, exception message is human-readable
         print(str(e))
+        return False
+
+    return True    
 
 
-get_user_details()
+details = get_user_details()
