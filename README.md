@@ -255,13 +255,16 @@ We can now click on the open App button above to view our application.
 <a name="credits"></a>
 ## Credits
 
-Multiple resources used to better understand the logic and flow of a gaming programme in Python.
+Multiple resources used to better understand the logic and flow of functions and classes Python.
 
-### [Stack Exchange](https://)
-> 
+### [Stack Overflow](https://)
+> Useful for learning how to validate emails and mobile numbers.
+
+### [PyPi](https://pypi.org/project/email-validator/)
+> A robust email address suyntax validation library installed for use with this project.
 
 ### [TechWithNash](https://www.youtube.com/watch?v=4AycrAPVKV0)
-> Useful tutorial on how to build an advanced calculator with Python
+> Useful tutorial on how to build an advanced calculator with Python.
 
 ### [](https://)
 > 
@@ -270,7 +273,7 @@ Multiple resources used to better understand the logic and flow of a gaming prog
 ## Content & Resources
 
 ### w3 schools
-> Used to reference Python Structure
+> Used to reference Python Structure.
 
 ### [ASCIIART.EU](https://)
 > Used this website for the bender applause ascii for when a user wins a hand.

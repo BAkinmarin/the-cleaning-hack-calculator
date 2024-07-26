@@ -24,38 +24,32 @@ def hello_user():
     """
     print('Welcome to The Cleaning Hack!')
     print('To get your free cleaning estimate, you will need to provide your contact details and answer a few questions regarding your property.')
-    print('Please confirm if you wish to continue...\n')
+    print('Please hit ENTER after each input...\n')
 
     choice_str = input('Do you wish to continue? Y or N: ')
-    
-#hello_user()
 
 def get_user_details():
     """
     Get details personal details from user and add to sheet.
     """
     details_str = []
-    name_str = input('\nEnter your name: ')
+    name_str = input('Enter your name: ')
     mobile_str = input('Enter your mobile number: ')
     email_str = input('Enter your email address: ')
 
-
     details_str = name_str, mobile_str, email_str
-    data_validation(details_str)
-    #print(details_str)
-
-#get_user_details() 
-
-def data_validation(details):
+    validate_mobile(mobile_str)  
+               
+def validate_mobile(user_mobile):
     """
     Converts strings to integers and integers to strings.
     Raises ValueError if conversion fails or if mobile and email format incorrect.
     """
     try:
-        if len(mobile_str) != 11:
+        if len(user_mobile) != 11:
             raise ValueError(
-                f'Your mobile number needs to be 11 digits. You provided {len(details)}. Please enter a valid UK mobile number.')
+                f'Your mobile number needs to be 11 digits. You provided {len(user_mobile)}')
     except ValueError as e:
-        print(f'Invalid data: {e}, please try again.\n')     
-               
+        print(f'Invalid data: {e}. Please enter a valid UK number.\n')   
+
 get_user_details()
