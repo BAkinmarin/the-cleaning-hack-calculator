@@ -2,8 +2,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
 
-# Import RegEx package for email validation
-import re
+# Import relevant package for email validation
+from email_validator import validate_email, EmailNotValidError
 
 # APIs for project scope
 SCOPE = [
@@ -44,29 +44,29 @@ def get_user_details():
     validate_user_mobile(mobile_str)
     validate_user_email(email_str)  
                
-def validate_user_mobile(user_mobile):
+def validate_user_mobile(mobile):
     """
     Converts strings to integers.
     Raises ValueError if conversion fails.
-    Also Checks mobile number matches UK format.
+    Checks mobile number is 11 digits long.
     """
     try:
-        if len(user_mobile) != 11:
-            raise ValueError(f'Your mobile number needs to be 11 digits. You provided {len(user_mobile)}')
+        if len(mobile) != 11:
+            raise ValueError(f'Your mobile number needs to be 11 digits. You entered {len(mobile)}')
     except ValueError as e:
         print(f'Invalid Mobile Number: {e}. Please enter a valid UK number.\n')   
 
-def validate_user_email(user_email):
+def validate_user_email(email):
     """
     Checks that email syntax provided is valid.
     Raises EmailNotValidError if validation fails.
     """
-    pattern = re.search(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9.]*\.*[com|org|edu]{3}$)", user_email)
     try:
-        if user_email != pattern:
-            raise ValueError(f'Your email address is invalid. You provided {user_email}')
-    except ValueError as e:
-        print(f'Invalid Email Address: {e}. Please enter your email address in the format: myaddress@email.com.\n') 
-    
+        email_format = validate_email(email)  # validate and get info
+        email = email_format.normalized  # replace with normalized form
+    except EmailNotValidError as e:
+        # email is not valid, exception message is human-readable
+        print(str(e))
+
 
 get_user_details()

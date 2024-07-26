@@ -200,15 +200,14 @@ Error Msg: Please enter Y to play again or any other key to exit
 <a name="bugs"></a>
 ## **Bugs**
 
+### Notification Message- Details Complete
+> Unable to get sequence of notification messages in email validation function working - program currently displays when user email is invalid but not when all details have been entered correctly.
+
 ### 
-> 
+>  
 
 ### 
 > 
-
-### 
-> 
-
 
 <a name="deployment"></a>
 ## Deployment
@@ -257,7 +256,7 @@ We can now click on the open App button above to view our application.
 
 Multiple resources used to better understand the logic and flow of functions and classes Python.
 
-### [Stack Overflow](https://)
+### [Stack Overflow](https://stackoverflow.com/questions/8022530/how-to-check-for-valid-email-address)
 > Useful for learning how to validate emails and mobile numbers.
 
 ### [PyPi](https://pypi.org/project/email-validator/)
