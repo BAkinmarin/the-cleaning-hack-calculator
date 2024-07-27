@@ -29,8 +29,6 @@ def hello_user():
     print('To get your free cleaning estimate, please provide your contact details.')
     print('Do not forget to press ENTER after each input...\n')
 
-    #choice_str = input('Do you wish to continue? Y or N: ')
-
 def get_user_details():
     """
     Get details personal details from user and add to sheet.
@@ -45,12 +43,13 @@ def get_user_details():
             print('Thank you for providing your details!\n')
             # Obtain relevant information from user to calculate estimate
             print("Now, let's get you that estimate...")
-            print('Please enter your answers as whole numbers!\n')
-            no_of_bedrooms = input('Enter number of bedrooms: ')
-            no_of_bathrooms = input('Enter number of bathrooms including ensuites and downstairs toilets: ')
-            no_of_living_rooms = input('Enter number of living spaces including conservatory and offices: ')
+            print('Please enter property details as whole numbers.\n')
+            no_of_bedrooms = input('No. of bedrooms: ')
+            no_of_bathrooms = input('No. of bathrooms (include separate toilets): ')
+            no_of_livingrooms = input('No. of living rooms: ')
+            other_rooms = input('Any other rooms i.e. kitchen, utility, conservatory: ')
 
-            details_str = name_str, mobile_str, email_str, no_of_bathrooms, no_of_bathrooms, no_of_bathrooms
+            details_str = name_str, mobile_str, email_str, no_of_bedrooms, no_of_bathrooms, no_of_livingrooms, other_rooms
 
             break
 
@@ -90,10 +89,13 @@ def update_worksheet(details):
     """
     Add the details provided by the user to worksheet.
     Adds a new row to the quotes worksheet.
+    Provides personalised confirmation to user of estimate being calculated.
     """      
     quotes_worksheet = SHEET.worksheet('quotes')
     quotes_worksheet.append_row(details)
-    print('\nJust getting your estimate...\n')
+    user = SHEET.worksheet('quotes').get_all_values()
+    user_name = user[-1][0]
+    print(f'\nThank you, {user_name}! Just getting your estimate...\n')
 
 
 hello_user()
