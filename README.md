@@ -55,8 +55,6 @@
 
 - Email
 
-- Postcode
-
 
 ## Program Flow - 
 > When the user loads the program, they are presented with a welcome message and instructions as seen:

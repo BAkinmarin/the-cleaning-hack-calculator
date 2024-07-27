@@ -25,11 +25,11 @@ def hello_user():
     """
     Display welcome message and instructions to user.
     """
-    print('Welcome to The Cleaning Hack!')
-    print('To get your free cleaning estimate, you will need to provide your contact details and answer a few questions regarding your property.')
-    print('Please hit ENTER after each input...\n')
+    print('Welcome to The Cleaning Hack free cleaning estimate!')
+    print('To get your estimate, please provide your contact details.')
+    print('Do not forget to press ENTER after each input...\n')
 
-    choice_str = input('Do you wish to continue? Y or N: ')
+    #choice_str = input('Do you wish to continue? Y or N: ')
 
 def get_user_details():
     """
@@ -47,13 +47,12 @@ def get_user_details():
             print('Thank you for providing your details!')
             break
 
-    return details_str    
+    return details_str       
                
 def validate_user_mobile(mobile_str):
     """
-    Converts strings to integers.
-    Raises ValueError if conversion fails.
     Checks mobile number is 11 digits long.
+    Raises ValueError if conversion fails.
     """
     try:
         if len(mobile_str) != 11:
@@ -64,20 +63,20 @@ def validate_user_mobile(mobile_str):
 
     return True    
 
+# This idea was inspired by Joshua Tauberer - maintains email-validator 2.2.0 on pypi.org
 def validate_user_email(email_str):
     """
     Checks that email syntax provided is valid.
     Raises EmailNotValidError if validation fails.
     """
     try:
-        email_format = validate_email(email_str)  # validate and get info
-        email = email_format.normalized  # replace with normalized form
+        email_format = validate_email(email_str)
+        email = email_format.normalized
     except EmailNotValidError as e:
-        # email is not valid, exception message is human-readable
         print(str(e))
         return False
 
     return True    
 
-
+hello_user()
 details = get_user_details()
