@@ -41,15 +41,15 @@ def get_user_details():
 
         if validate_user_mobile(mobile_str) and validate_user_email(email_str):
             print('Thank you for providing your details!\n')
-            # Obtain relevant information from user to calculate estimate
+            # Obtain relevant information from user to calculate estimate and convert to integer
             print("Now, let's get you that estimate...")
             print('Please enter property details as whole numbers.\n')
-            no_of_bedrooms = input('No. of bedrooms: ')
-            no_of_bathrooms = input('No. of bathrooms (include separate toilets): ')
-            no_of_livingrooms = input('No. of living rooms: ')
-            other_rooms = input('Any other rooms i.e. kitchen, utility, conservatory: ')
+            no_of_bedrooms = int(input('No. of bedrooms: '))
+            no_of_bathrooms = int(input('No. of bathrooms (include separate toilets): '))
+            no_of_livingrooms = int(input('No. of living rooms: '))
+            no_of_other_rooms = input('Any other rooms i.e. kitchen, utility, conservatory: ')
 
-            details_str = name_str, mobile_str, email_str, no_of_bedrooms, no_of_bathrooms, no_of_livingrooms, other_rooms
+            details_str = name_str, mobile_str, email_str, no_of_bedrooms, no_of_bathrooms, no_of_livingrooms, no_of_other_rooms
 
             break
 
@@ -83,7 +83,7 @@ def validate_user_email(email_str):
         print()
         return False
 
-    return True
+    return True       
 
 def update_worksheet(details):
     """
@@ -95,9 +95,10 @@ def update_worksheet(details):
     quotes_worksheet.append_row(details)
     user = SHEET.worksheet('quotes').get_all_values()
     user_name = user[-1][0]
-    print(f'\nThank you, {user_name}! Just getting your estimate...\n')
+    print(f'\nThank you, {user_name}! Just getting your estimate...\n')    
 
 
 hello_user()
 details = get_user_details()
+values = validate_property_details()
 update_worksheet(details)
