@@ -25,8 +25,8 @@ def hello_user():
     """
     Display welcome message and instructions to user.
     """
-    print('Welcome to The Cleaning Hack free cleaning estimate!')
-    print('To get your estimate, please provide your contact details.')
+    print('Welcome to The Cleaning Hack!')
+    print('To get your free estimate, please provide your contact details.')
     print('Do not forget to press ENTER after each input...\n')
 
     #choice_str = input('Do you wish to continue? Y or N: ')
@@ -76,7 +76,20 @@ def validate_user_email(email_str):
         print(str(e))
         return False
 
-    return True    
+    return True
+
+def update_worksheet(details):
+    """
+    Add the details provided by the user to worksheet.
+    Adds a new row to the quotes worksheet.
+    """      
+    print('Saving details...\n') 
+    quotes_worksheet = SHEET.worksheet('quotes')
+    quotes_worksheet.append_row(details)
+    print('Details saved successfully!')
+    #print('\nDo you know the square footage of the property? Y or N: ')
+    #confirm_square_feet = input('Enter Y or N: ')
 
 hello_user()
 details = get_user_details()
+update_worksheet(details)
