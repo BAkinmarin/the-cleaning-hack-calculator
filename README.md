@@ -2,12 +2,11 @@
 
 
 ## A Python command line calculator
-> This application is a Python based calculation for a cleaning company used to produce a estimate for client jobs. The application requires the user to enter their name, mobile number and email before entering the details required to produce an estimate.
+> This application is a Python based calculation for a real cleaning company, The Cleaning Hack, which is used to produce a free cleaning estimate for potential clients. The application requires the user to enter their name, mobile number and email which is validated prior to entering the details required to produce an estimate such as number of bedrooms, bathrooms, living spaces.
 
 ### - By Bola Akinmarin
 
 ### **[Live site](https://)**
-
 
 
 ### **[Repository](https://)**
@@ -41,11 +40,6 @@
 
 ### Structure
 
-#### User Menu
-
-- Quote
-
-- Exit
 
 #### User Details
 
@@ -56,25 +50,39 @@
 - Email
 
 
+#### Property Details
+
+- No. of Bedrooms
+
+- No. of Bathrooms 
+
+- No. of Livingrooms
+
+- Any other rooms
+
+
 ## Program Flow - 
 > When the user loads the program, they are presented with a welcome message and instructions as seen:
-
 ![Welcome Page](https://)
 
-> The user is then presented with a menu asking them to enter a number corresponding to their choice:
-![Menu](https://)
-
-> If the user selects exit, they will be redirected to the welcome page:
-![Exit](https://)
-
-> If the user selects 'Quote' they will be asked to enter their details i.e. name, mobile, email address and postcode:
+> The user will then be asked to enter their name, mobile and email which will be validated before moving on to the next stage:
 ![User Details](https://)
 
-> If the user enters a number not corresponding to any of the options listed, they will be shown the following error message:
-![Invalid Choice](https://)
+> If validation fails, the user will be shown the following error messages depending on exception raised:
+![Missing Details](https://)
+
+![Invalid Mobile Number](https://)
+
+![Invalid Email](https://)
 
 > Next, the user will be asked to provide number of bedrooms, bathrooms, etc:
-![Confirm No. of Rooms](https://)
+![No. of Bedrooms](https://)
+
+![No. of Bathrooms](https://)
+
+![No. of Livingrooms](https://)
+
+![Any other rooms](https://)
 
 > The user will then be asked to enter any additional information:
 ![Additional Information](https://)
@@ -83,16 +91,16 @@
 ![Confirm Details](https://)
 
 > If the user selects the choice indicating the details are incorrect, they will be able to start over from the number of bedrooms question:
-![Re-enter Details](https://)
+![Re-enter Property Details](https://)
 
-> If the user selects the choice indicating the details are correct, they will be shown their quote and asked if they want to get another quote or exit:
+> If the user selects the choice indicating the details are correct, they will be shown their quote and asked if they want to get another quote or exit the program:
 ![Quote](https://)
 
 <a name="left"></a>
 
 ### Features left to implement
 
-> Functionality to prompt user to enter only the piece of information that fails validation.
+> Functionality to prompt user to enter only the specific piecce of information which fails validation.
 
 
 <a name="tech"></a>
@@ -196,7 +204,7 @@ Error Msg: Please enter Y to play again or any other key to exit
 ## **Bugs**
 
 ### Notification Message- Details Complete
-> Unable to get sequence of notification messages in email validation function working - program currently displays when user email is invalid but not when all details have been entered correctly.
+> Unable to get sequence of notification messages in email validation function working - program currently displays when user email is invalid but not when all details have been entered correctly. **Fixed**
 
 ### 
 >  
@@ -252,10 +260,7 @@ We can now click on the open App button above to view our application.
 Multiple resources used to better understand the logic and flow of functions and classes Python.
 
 ### [Stack Overflow](https://stackoverflow.com/questions/8022530/how-to-check-for-valid-email-address)
-> Useful for learning how to validate emails and mobile numbers.
-
-### [PyPi](https://pypi.org/project/email-validator/)
-> A robust email address suyntax validation library installed for use with this project.
+> Useful for learning how to validate email addresses.
 
 ### [TechWithNash](https://www.youtube.com/watch?v=4AycrAPVKV0)
 > Useful tutorial on how to build an advanced calculator with Python.
@@ -280,6 +285,9 @@ Multiple resources used to better understand the logic and flow of functions and
 
 ### Youtube
 > One of the best free learning platforms in the world and has I use it every day when coding to help me better understand concepts from different perspectives.
+
+### [PyPi](https://pypi.org/project/email-validator/)
+> A robust email address syntax validation library installed for use with this project.
 
 <a name="acknowlegements"></a>
 ## Acknowledgements
