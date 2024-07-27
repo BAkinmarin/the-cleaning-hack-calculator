@@ -39,7 +39,7 @@ def get_user_details():
         mobile_str = input('Enter your mobile number: ')
         email_str = input('Enter your email address: ')
 
-        if validate_user_mobile(mobile_str) and validate_user_email(email_str):
+        if validate_user_name(name_str) and validate_user_mobile(mobile_str) and validate_user_email(email_str):
             print('Thank you for providing your details!\n')
             # Obtain relevant information from user to calculate estimate and convert to integer
             print("Now, let's get you that estimate...")
@@ -53,7 +53,21 @@ def get_user_details():
 
             break
 
-    return details_str       
+    return details_str   
+
+def validate_user_name(name_str):
+    """
+    Checks that username has been provided and is not left blank.
+    Raises UnicodeError if validation fails.
+    """        
+    try:
+        if name_str == '':
+            raise NameError(f'You failed to enter your name.')
+    except NameError as e:
+        print(f'Missing Data: {e}. Please try again.\n')    
+        return False
+
+    return True    
                
 def validate_user_mobile(mobile_str):
     """
@@ -83,7 +97,7 @@ def validate_user_email(email_str):
         print()
         return False
 
-    return True       
+    return True     
 
 def update_worksheet(details):
     """
@@ -100,5 +114,4 @@ def update_worksheet(details):
 
 hello_user()
 details = get_user_details()
-values = validate_property_details()
 update_worksheet(details)
