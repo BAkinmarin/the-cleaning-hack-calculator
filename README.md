@@ -2,7 +2,7 @@
 
 
 ## A Python command line calculator
-> This application is a Python based calculation for a cleaning company used to produce a estimate for client jobs. The application requires the user to enter their name, mobile number, email and postcode before entering the details required to produce a quote.
+> This application is a Python based calculation for a cleaning company used to produce a estimate for client jobs. The application requires the user to enter their name, mobile number and email before entering the details required to produce an estimate.
 
 ### - By Bola Akinmarin
 
@@ -73,10 +73,7 @@
 > If the user enters a number not corresponding to any of the options listed, they will be shown the following error message:
 ![Invalid Choice](https://)
 
-> Next, the user will be asked to confirm if they know the square footage of their property:
-![Square Footage](https://)
-
-> If the user does not know the square footage of their property, they will be asked to provide number of bedrooms, bathrooms, etc:
+> Next, the user will be asked to provide number of bedrooms, bathrooms, etc:
 ![Confirm No. of Rooms](https://)
 
 > The user will then be asked to enter any additional information:
@@ -95,7 +92,7 @@
 
 ### Features left to implement
 
->
+> Functionality to prompt user to enter only the piece of information that fails validation.
 
 
 <a name="tech"></a>

@@ -26,7 +26,7 @@ def hello_user():
     Display welcome message and instructions to user.
     """
     print('Welcome to The Cleaning Hack!')
-    print('To get your free estimate, please provide your contact details.')
+    print('To get your free cleaning estimate, please provide your contact details.')
     print('Do not forget to press ENTER after each input...\n')
 
     #choice_str = input('Do you wish to continue? Y or N: ')
@@ -41,10 +41,17 @@ def get_user_details():
         mobile_str = input('Enter your mobile number: ')
         email_str = input('Enter your email address: ')
 
-        details_str = name_str, mobile_str, email_str
-
         if validate_user_mobile(mobile_str) and validate_user_email(email_str):
-            print('Thank you for providing your details!')
+            print('Thank you for providing your details!\n')
+            # Obtain relevant information from user to calculate estimate
+            print("Now, let's get you that estimate...")
+            print('Please enter your answers as whole numbers!\n')
+            no_of_bedrooms = input('Enter number of bedrooms: ')
+            no_of_bathrooms = input('Enter number of bathrooms including ensuites and downstairs toilets: ')
+            no_of_living_rooms = input('Enter number of living spaces including conservatory and offices: ')
+
+            details_str = name_str, mobile_str, email_str, no_of_bathrooms, no_of_bathrooms, no_of_bathrooms
+
             break
 
     return details_str       
@@ -74,6 +81,7 @@ def validate_user_email(email_str):
         email = email_format.normalized
     except EmailNotValidError as e:
         print(str(e))
+        print()
         return False
 
     return True
@@ -83,12 +91,10 @@ def update_worksheet(details):
     Add the details provided by the user to worksheet.
     Adds a new row to the quotes worksheet.
     """      
-    print('Saving details...\n') 
     quotes_worksheet = SHEET.worksheet('quotes')
     quotes_worksheet.append_row(details)
-    print('Details saved successfully!')
-    #print('\nDo you know the square footage of the property? Y or N: ')
-    #confirm_square_feet = input('Enter Y or N: ')
+    print('\nJust getting your estimate...\n')
+
 
 hello_user()
 details = get_user_details()
