@@ -17,10 +17,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('the-cleaning-hack-calculator')
 
-#quotes = SHEET.worksheet('quotes')
-#data = quotes.get_all_values()
-#print(data)
-
 def hello_user():
     """
     Display welcome message and instructions to user.
@@ -57,7 +53,7 @@ def get_user_details():
 
 def validate_user_name(name_str):
     """
-    Checks that username has been provided and is not left blank.
+    Checks that user's name is provided not left blank.
     Raises UnicodeError if validation fails.
     """        
     try:
@@ -83,7 +79,7 @@ def validate_user_mobile(mobile_str):
 
     return True    
 
-# This idea was inspired by Joshua Tauberer - maintains email-validator 2.2.0 on pypi.org
+# This idea was inspired by Joshua Tauberer - email-validator 2.2.0 on pypi.org
 def validate_user_email(email_str):
     """
     Checks that email syntax provided is valid.
@@ -109,9 +105,15 @@ def update_worksheet(details):
     quotes_worksheet.append_row(details)
     user = SHEET.worksheet('quotes').get_all_values()
     user_name = user[-1][0]
-    print(f'\nThank you, {user_name}! Just getting your estimate...\n')    
+    print(f'Thank you, {user_name}! Just getting your estimate...\n')    
+
+def main():
+    """
+    Main function to run all program functions.
+    """
+    hello_user()
+    details = get_user_details()
+    update_worksheet(details)
 
 
-hello_user()
-details = get_user_details()
-update_worksheet(details)
+main()
