@@ -25,9 +25,10 @@ def hello_user():
     print('To get your free cleaning estimate, please provide your contact details.')
     print('Do not forget to press ENTER after each input...\n')
 
+
 def get_user_details():
     """
-    Get details personal details from user and add to sheet.
+    Get personal details from user then run validation.
     """
     while True:
         details_str = []
@@ -37,19 +38,33 @@ def get_user_details():
 
         if validate_user_name(name_str) and validate_user_mobile(mobile_str) and validate_user_email(email_str):
             print('Thank you for providing your details!\n')
-            # Obtain relevant information from user to calculate estimate and convert to integer
             print("Now, let's get you that estimate...")
             print('Please enter property details as whole numbers.\n')
-            no_of_bedrooms = int(input('No. of bedrooms: '))
-            no_of_bathrooms = int(input('No. of bathrooms (include separate toilets): '))
-            no_of_livingrooms = int(input('No. of living rooms: '))
-            no_of_other_rooms = input('Any other rooms i.e. kitchen, utility, conservatory: ')
-
-            details_str = name_str, mobile_str, email_str, no_of_bedrooms, no_of_bathrooms, no_of_livingrooms, no_of_other_rooms
-
+            
+            details_str = name_str, mobile_str, email_str
+                
             break
+        
+    return details_str
 
-    return details_str   
+
+def get_property_details():
+    """
+    Get property details from user then run validation.
+    """
+    property_str = []
+
+    no_of_bedrooms = input('No. of bedrooms: ')
+    no_of_bathrooms = input('No. of bathrooms (include separate toilets): ')
+    no_of_livingrooms = input('No. of living rooms (include kitchen, utility, conservatory): ') 
+
+    property_str = no_of_bedrooms, no_of_bathrooms, no_of_livingrooms
+
+    if validate_rooms(property_str):
+        print()
+
+    return property_str    
+
 
 def validate_user_name(name_str):
     """
@@ -64,7 +79,8 @@ def validate_user_name(name_str):
         return False
 
     return True    
-               
+
+
 def validate_user_mobile(mobile_str):
     """
     Checks mobile number is 11 digits long.
@@ -78,6 +94,7 @@ def validate_user_mobile(mobile_str):
         return False
 
     return True    
+
 
 # This idea was inspired by Joshua Tauberer - email-validator 2.2.0 on pypi.org
 def validate_user_email(email_str):
@@ -93,19 +110,39 @@ def validate_user_email(email_str):
         print()
         return False
 
-    return True     
+    return True   
 
-def update_worksheet(details):
+
+def validate_rooms(values):
+    """
+    Checks that user has entered an integer for number of rooms.
+    Converts strings to integers.
+    Raises ValueError if conversion fails.
+    """
+    try:
+        [int(value) for value in values]
+        if len(values) != 3:
+            raise ValueError('You must provide number of rooms.')
+    except ValueError as e:
+        print(f'Missing Details: {e}. Please enter 0 if not applicable.\n')        
+        return False
+
+    return True                        
+
+
+def update_worksheet(details, rooms):
     """
     Add the details provided by the user to worksheet.
     Adds a new row to the quotes worksheet.
     Provides personalised confirmation to user of estimate being calculated.
-    """      
+    """  
     quotes_worksheet = SHEET.worksheet('quotes')
-    quotes_worksheet.append_row(details)
+    quotes_worksheet.append_row(details + rooms)
     user = SHEET.worksheet('quotes').get_all_values()
     user_name = user[-1][0]
-    print(f'Thank you, {user_name}! Just getting your estimate...\n')    
+    print(f'Thank you, {user_name}!\n')
+    print('Just getting your estimate now...\n') 
+
 
 def main():
     """
@@ -113,7 +150,8 @@ def main():
     """
     hello_user()
     details = get_user_details()
-    update_worksheet(details)
-
+    rooms = get_property_details()
+    update_worksheet(details, rooms)
+    
 
 main()
