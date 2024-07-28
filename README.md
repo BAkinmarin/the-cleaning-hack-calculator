@@ -93,8 +93,8 @@
 > If the user selects the choice indicating the details are incorrect, they will be able to start over from the number of bedrooms question:
 ![Re-enter Property Details](https://)
 
-> If the user selects the choice indicating the details are correct, they will be shown their quote and asked if they want to get another quote or exit the program:
-![Quote](https://)
+> If the user selects the choice indicating the details are correct, they will be shown their estimate and asked if they want to get another estimate or exit the program:
+![Estimate](https://)
 
 <a name="left"></a>
 
@@ -265,32 +265,34 @@ Multiple resources used to better understand the logic and flow of functions and
 ### [TechWithNash](https://www.youtube.com/watch?v=4AycrAPVKV0)
 > Useful tutorial on how to build an advanced calculator with Python.
 
-### [](https://)
-> 
+### [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-make-a-calculator-program-in-python-3)
+> Useful step-by-step guide on how to create a calculator program.
+
+### [PyPi](https://pypi.org/project/email-validator/)
+> A robust email address syntax validation library installed for use with this project.
 
 <a name="content"></a>
-## Content & Resources
+## Content and Resources
 
 ### w3 schools
 > Used to reference Python Structure.
-
-### [ASCIIART.EU](https://)
-> Used this website for the bender applause ascii for when a user wins a hand.
 
 ### Code Institute
 > Project created in line with course content and within project 3 scope.
 
 ### Stack Overflow
-> Used to reference different synthax issues from existing older boards. Also used to query clear function issues when I ran into them as referenced in the terminal bug in the big section.
+> Used to review my own code to ensure simplicity where possible. 
 
 ### Youtube
-> One of the best free learning platforms in the world and has I use it every day when coding to help me better understand concepts from different perspectives.
+> One of the most accessible learning platforms with a global reach. Very useful in broadening my approach to coding, providing insights into coding concepts from different perspectives.
 
-### [PyPi](https://pypi.org/project/email-validator/)
-> A robust email address syntax validation library installed for use with this project.
+### Digital Ocean
 
 <a name="acknowlegements"></a>
 ## Acknowledgements
 
 ### Alan Bushell
 > My mentor in the CI who provided me with great feedback and guidance at the inception of this project.
+
+### External Community
+> 
