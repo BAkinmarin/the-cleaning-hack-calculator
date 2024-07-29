@@ -141,7 +141,7 @@ def update_worksheet(details, rooms):
     user = SHEET.worksheet('quotes').get_all_values()
     user_name = user[-1][0]
     print(f'Thank you, {user_name}!\n')
-    print('Just getting your estimate now...\n') 
+    print('Just getting your estimate now...\n')
 
 
 def main():
@@ -154,7 +154,6 @@ def main():
     # Convert rooms from strings to integers
     property_values = [int(num) for num in rooms]
     update_worksheet(details, rooms)
-    print(rooms)
     print(property_values)
     
 

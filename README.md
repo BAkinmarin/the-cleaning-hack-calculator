@@ -82,25 +82,25 @@
 
 ![No. of Livingrooms](https://)
 
-![Any other rooms](https://)
+> The details provided will be displayed along with the estimate:
+![Cleaning Estimate](https://)
 
-> The user will then be asked to enter any additional information:
-![Additional Information](https://)
+> The user will then be asked if they want to continue i.e. obtain another estimate or exit the program:
+![Continue or Exit](https://)
 
-> The details provided will be displayed and the user will be asked to confirm accuracy:
-![Confirm Details](https://)
+> If the user selects continue, they will be asked to enter property details for a new estimate:
+![New Estimate](https://)
 
-> If the user selects the choice indicating the details are incorrect, they will be able to start over from the number of bedrooms question:
-![Re-enter Property Details](https://)
-
-> If the user selects the choice indicating the details are correct, they will be shown their estimate and asked if they want to get another estimate or exit the program:
-![Estimate](https://)
+> If the user selects exit, the program will stop running:
+![Exit](https://)
 
 <a name="left"></a>
 
 ### Features left to implement
 
 > Functionality to prompt user to enter only the specific piecce of information which fails validation.
+
+> Functionality to valid mobile to ensure only UK mobile numbers are provided.
 
 
 <a name="tech"></a>
