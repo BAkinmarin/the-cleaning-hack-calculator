@@ -5,6 +5,9 @@ from google.oauth2.service_account import Credentials
 # Import relevant package for email validation
 from email_validator import validate_email, EmailNotValidError
 
+# Import module to clear terminal
+import os
+
 # APIs for project scope
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -26,6 +29,14 @@ def hello_user():
     print('DO NOT forget to press ENTER after each input...\n')
 
 
+# This idea was inspired by Alan Bushell, Code Institute Mentor
+def clear_terminal():
+    """
+    Clears terminal after specific functions to give user room.
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def get_user_details():
     """
     Get personal details from user then run validation.
@@ -37,7 +48,7 @@ def get_user_details():
         email_str = input('Enter your email address: \n')
 
         if validate_user_name(name_str) and validate_user_mobile(mobile_str) and validate_user_email(email_str):
-            print(f"Thanks, {name_str}! Now, let's get you that estimate...")
+            print(f"\nThanks, {name_str}! Now, let's get you that estimate...")
             print('Please note that this amount may increase depending on condition upon arrival.\n')
             print('Please enter room details as whole numbers.')
             
@@ -145,7 +156,7 @@ def update_worksheet(details, rooms):
     # Declared as global variable to enable access inside other functions and keep personalised theme
     global user_name 
     user_name = user[-1][0]
-    print(f'Thank you, {user_name}! Just getting your estimate now...')
+    print(f'Thanks, {user_name}! Just getting your estimate now...')
 
 
 def calculate_estimate(property_values):
@@ -176,11 +187,12 @@ def get_new_estimate():
         new_estimate = input('Enter "Y" for new estimate or any other key to exit: ')
 
         if new_estimate.lower() == 'y':
+            clear_terminal()
             new_rooms = get_property_details()
             new_property_values = [int(num) for num in new_rooms]
             update_worksheet(details, new_rooms)
             new_estimate = calculate_estimate(new_property_values)
-            print(new_estimate)      
+            print(new_estimate)  
         else:
             print(f'Thanks for your enquiry, {user_name}! A member of our team will be in touch within 24 hours.')  
             break  
@@ -201,5 +213,6 @@ def main():
     estimate = calculate_estimate(property_values)
     print(estimate)
     get_new_estimate()
+
 
 main()
