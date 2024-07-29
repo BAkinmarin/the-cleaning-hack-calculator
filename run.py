@@ -23,7 +23,7 @@ def hello_user():
     """
     print('Welcome to The Cleaning Hack!')
     print('To get your free cleaning estimate, please provide your contact details.')
-    print('Do not forget to press ENTER after each input...\n')
+    print('DO NOT forget to press ENTER after each input...\n')
 
 
 def get_user_details():
@@ -37,9 +37,9 @@ def get_user_details():
         email_str = input('Enter your email address: \n')
 
         if validate_user_name(name_str) and validate_user_mobile(mobile_str) and validate_user_email(email_str):
-            print('Thank you for providing your details!\n')
+            print('Thank you for providing your details!')
             print("Now, let's get you that estimate...")
-            print('Please note that estimate is subject to increase depending on property condition upon arrival.\n')
+            print('Please note that this amount may increase depending on condition upon arrival.\n')
             print('Please enter room details as whole numbers.')
             
             details_str = name_str, mobile_str, email_str
@@ -54,18 +54,19 @@ def get_property_details():
     Get property details from user then run validation.
     """
     property_str = []
+   
+    while True:
+        no_of_bedrooms = input('No. of bedrooms: \n')
+        no_of_bathrooms = input('No. of bathrooms (include separate toilets): \n')
+        no_of_livingrooms = input('No. of living rooms (include office, conservatory): \n') 
+        no_of_otherrooms = input('Any other rooms (include kitchen, utility): \n')
 
-    no_of_bedrooms = input('No. of bedrooms: \n')
-    no_of_bathrooms = input('No. of bathrooms (include separate toilets): \n')
-    no_of_livingrooms = input('No. of living rooms (include office, conservatory): \n') 
-    no_of_otherrooms = input('Any other rooms (include kitchen, utility): \n')
+        property_str = no_of_bedrooms, no_of_bathrooms, no_of_livingrooms, no_of_otherrooms
 
-    property_str = no_of_bedrooms, no_of_bathrooms, no_of_livingrooms, no_of_otherrooms
+        if validate_rooms(property_str):
+            print()
 
-    if validate_rooms(property_str):
-        print()
-
-    return property_str    
+        return property_str    
 
 
 def validate_user_name(name_str):
@@ -142,16 +143,18 @@ def update_worksheet(details, rooms):
     quotes_worksheet = SHEET.worksheet('quotes')
     quotes_worksheet.append_row(details + rooms)
     user = SHEET.worksheet('quotes').get_all_values()
+    # Declared as global variable to enable access inside other functions and keep personalised theme
+    global user_name 
     user_name = user[-1][0]
-    print(f'Thank you, {user_name}!')
-    print('Just getting your estimate now...\n')
+    print(f'Thank you, {user_name}! Just getting your estimate now...')
+
 
 def calculate_estimate(property_values):
     """
     Calculates cleaning estimate using pre-defined formula based on 
     number of rooms provided by user.
     """
-    print(f'You entered {property_values[0]} bedrooms, {property_values[1]} bathrooms, {property_values[2]} living rooms and {property_values[3]} other rooms.')  
+    print(f'You entered {property_values[0]} Bedroom(s), {property_values[1]} Bathroom(s), {property_values[2]} Living-room(s) and {property_values[3]} Other room(s).')    
     estimate_value = []
     total_estimate = 0
 
@@ -170,12 +173,18 @@ def get_new_estimate():
     """
     Requests if user would like to obtain another extimate or exit program.
     """
-    new_estimate = input('Enter "Y" for new estimate or any other key to exit: ')
+    while True:
+        new_estimate = input('Enter "Y" for new estimate or any other key to exit: ')
 
-    if new_estimate.lower() == 'y':
-        get_property_details()
-    else:
-        print('Thank you for your enquiry! A member of our team will be in touch within 48 hours.')    
+        if new_estimate.lower() == 'y':
+            new_rooms = get_property_details()
+            new_property_values = [int(num) for num in new_rooms]
+            update_worksheet(details, new_rooms)
+            new_estimate = calculate_estimate(new_property_values)
+            print(new_estimate)      
+        else:
+            print(f'Thanks for your enquiry, {user_name}! A member of our team will be in touch within 24 hours.')  
+            break  
 
 
 def main():
@@ -183,6 +192,8 @@ def main():
     Main function to run all program functions.
     """
     hello_user()
+    # Declared as a global variable to enable access inside get_new_estimate()
+    global details
     details = get_user_details()
     rooms = get_property_details()
     # Convert rooms from strings to integers
@@ -190,6 +201,6 @@ def main():
     update_worksheet(details, rooms)
     estimate = calculate_estimate(property_values)
     print(estimate)
-    
+    get_new_estimate()
 
 main()
