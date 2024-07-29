@@ -56,9 +56,10 @@ def get_property_details():
 
     no_of_bedrooms = input('No. of bedrooms: ')
     no_of_bathrooms = input('No. of bathrooms (include separate toilets): ')
-    no_of_livingrooms = input('No. of living rooms (include kitchen, utility, conservatory): ') 
+    no_of_livingrooms = input('No. of living rooms (include office, conservatory): ') 
+    no_of_otherrooms = input('Any other rooms (include kitchen, utility): ')
 
-    property_str = no_of_bedrooms, no_of_bathrooms, no_of_livingrooms
+    property_str = no_of_bedrooms, no_of_bathrooms, no_of_livingrooms, no_of_otherrooms
 
     if validate_rooms(property_str):
         print()
@@ -113,6 +114,7 @@ def validate_user_email(email_str):
     return True   
 
 
+# This idea was inspired by Code Institute's Love Sandwiches walkthrough project
 def validate_rooms(values):
     """
     Checks that user has entered an integer for number of rooms.
@@ -121,7 +123,7 @@ def validate_rooms(values):
     """
     try:
         [int(value) for value in values]
-        if len(values) != 3:
+        if len(values) != 4:
             raise ValueError('You must provide number of rooms.')
     except ValueError as e:
         print(f'Missing Details: {e}. Please enter 0 if not applicable.\n')        
@@ -140,8 +142,29 @@ def update_worksheet(details, rooms):
     quotes_worksheet.append_row(details + rooms)
     user = SHEET.worksheet('quotes').get_all_values()
     user_name = user[-1][0]
-    print(f'Thank you, {user_name}!\n')
-    print('Just getting your estimate now...\n')
+    print(f'Thank you, {user_name}!')
+    print('Just getting your estimate now...')
+    print('Please note your estimate may increase depending on the condition of your property upon arrival.\n')
+
+
+def calculate_estimate(property_values):
+    """
+    Calculates cleaning estimate using pre-defined formula based on 
+    number of rooms provided by user.
+    """
+    print(f'Based on your entry of {property_values[0]} bedrooms, {property_values[1]} bathrooms, {property_values[2]} livingrooms and {property_values[3]} other rooms...\n')  
+    estimate = []
+    total_estimate = 0
+
+    bedrooms = property_values[0] * 15
+    bathrooms = property_values[1] * 30
+    livingrooms = property_values[2] * 20
+    otherrooms = property_values[3] * 30
+
+    # Round calculation down to 2 decimal places
+    total_estimate = round(((bedrooms + bathrooms + livingrooms + otherrooms) * 1.15), 2)
+    estimate = total_estimate
+    return(f'We estimate it will cost around £{total_estimate} to get your property cleaned.')      
 
 
 def main():
@@ -154,7 +177,8 @@ def main():
     # Convert rooms from strings to integers
     property_values = [int(num) for num in rooms]
     update_worksheet(details, rooms)
-    print(property_values)
+    estimate = calculate_estimate(property_values)
+    print(estimate)
     
 
 main()
