@@ -156,7 +156,7 @@ def update_worksheet(details, rooms):
     # Declared as global variable to enable access inside other functions and keep personalised theme
     global user_name 
     user_name = user[-1][0]
-    print(f'Thanks, {user_name}! Just getting your estimate now...')
+    print(f'Thanks, {user_name}! Your details have been accepted! \nJust getting your estimate now...')
 
 
 def calculate_estimate(property_values):
@@ -188,6 +188,7 @@ def get_new_estimate():
 
         if new_estimate.lower() == 'y':
             clear_terminal()
+            print('Please enter room details as whole numbers.')
             new_rooms = get_property_details()
             new_property_values = [int(num) for num in new_rooms]
             update_worksheet(details, new_rooms)
