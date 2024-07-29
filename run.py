@@ -151,7 +151,11 @@ def main():
     hello_user()
     details = get_user_details()
     rooms = get_property_details()
+    # Convert rooms from strings to integers
+    property_values = [int(num) for num in rooms]
     update_worksheet(details, rooms)
+    print(rooms)
+    print(property_values)
     
 
 main()
