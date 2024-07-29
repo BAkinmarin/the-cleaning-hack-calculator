@@ -37,8 +37,7 @@ def get_user_details():
         email_str = input('Enter your email address: \n')
 
         if validate_user_name(name_str) and validate_user_mobile(mobile_str) and validate_user_email(email_str):
-            print('Thank you for providing your details!')
-            print("Now, let's get you that estimate...")
+            print(f"Thanks, {name_str}! Now, let's get you that estimate...")
             print('Please note that this amount may increase depending on condition upon arrival.\n')
             print('Please enter room details as whole numbers.')
             
