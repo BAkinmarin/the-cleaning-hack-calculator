@@ -32,9 +32,9 @@ def get_user_details():
     """
     while True:
         details_str = []
-        name_str = input('Enter your name: ')
-        mobile_str = input('Enter your mobile number: ')
-        email_str = input('Enter your email address: ')
+        name_str = input('Enter your name: \n')
+        mobile_str = input('Enter your mobile number: \n')
+        email_str = input('Enter your email address: \n')
 
         if validate_user_name(name_str) and validate_user_mobile(mobile_str) and validate_user_email(email_str):
             print('Thank you for providing your details!\n')
@@ -55,10 +55,10 @@ def get_property_details():
     """
     property_str = []
 
-    no_of_bedrooms = input('No. of bedrooms: ')
-    no_of_bathrooms = input('No. of bathrooms (include separate toilets): ')
-    no_of_livingrooms = input('No. of living rooms (include office, conservatory): ') 
-    no_of_otherrooms = input('Any other rooms (include kitchen, utility): ')
+    no_of_bedrooms = input('No. of bedrooms: \n')
+    no_of_bathrooms = input('No. of bathrooms (include separate toilets): \n')
+    no_of_livingrooms = input('No. of living rooms (include office, conservatory): \n') 
+    no_of_otherrooms = input('Any other rooms (include kitchen, utility): \n')
 
     property_str = no_of_bedrooms, no_of_bathrooms, no_of_livingrooms, no_of_otherrooms
 
@@ -163,14 +163,26 @@ def calculate_estimate(property_values):
     # Round calculation down to 2 decimal places
     total_estimate = round(((bedrooms + bathrooms + livingrooms + otherrooms) * 1.15), 2)
     estimate_value = total_estimate
-    return f'Based on your entry, we estimate it will cost around £{total_estimate} to get your property cleaned.'
+    return f'Based on your entry, we estimate it will cost around £{total_estimate} to get your property cleaned.\n'
+
+
+def get_new_estimate():
+    """
+    Requests if user would like to obtain another extimate or exit program.
+    """
+    new_estimate = input('Enter "Y" for new estimate or any other key to exit: ')
+
+    if new_estimate.lower() == 'y':
+        get_property_details()
+    else:
+        print('Thank you for your enquiry! A member of our team will be in touch within 48 hours.')    
 
 
 def main():
     """
     Main function to run all program functions.
     """
-    #hello_user()
+    hello_user()
     details = get_user_details()
     rooms = get_property_details()
     # Convert rooms from strings to integers
