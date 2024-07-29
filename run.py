@@ -39,7 +39,8 @@ def get_user_details():
         if validate_user_name(name_str) and validate_user_mobile(mobile_str) and validate_user_email(email_str):
             print('Thank you for providing your details!\n')
             print("Now, let's get you that estimate...")
-            print('Please enter property details as whole numbers.\n')
+            print('Please note that estimate is subject to increase depending on property condition upon arrival.\n')
+            print('Please enter room details as whole numbers.')
             
             details_str = name_str, mobile_str, email_str
                 
@@ -143,17 +144,15 @@ def update_worksheet(details, rooms):
     user = SHEET.worksheet('quotes').get_all_values()
     user_name = user[-1][0]
     print(f'Thank you, {user_name}!')
-    print('Just getting your estimate now...')
-    print('Please note your estimate may increase depending on the condition of your property upon arrival.\n')
-
+    print('Just getting your estimate now...\n')
 
 def calculate_estimate(property_values):
     """
     Calculates cleaning estimate using pre-defined formula based on 
     number of rooms provided by user.
     """
-    print(f'Based on your entry of {property_values[0]} bedrooms, {property_values[1]} bathrooms, {property_values[2]} livingrooms and {property_values[3]} other rooms...\n')  
-    estimate = []
+    print(f'You entered {property_values[0]} bedrooms, {property_values[1]} bathrooms, {property_values[2]} living rooms and {property_values[3]} other rooms.')  
+    estimate_value = []
     total_estimate = 0
 
     bedrooms = property_values[0] * 15
@@ -163,15 +162,15 @@ def calculate_estimate(property_values):
 
     # Round calculation down to 2 decimal places
     total_estimate = round(((bedrooms + bathrooms + livingrooms + otherrooms) * 1.15), 2)
-    estimate = total_estimate
-    return(f'We estimate it will cost around £{total_estimate} to get your property cleaned.')      
+    estimate_value = total_estimate
+    return f'Based on your entry, we estimate it will cost around £{total_estimate} to get your property cleaned.'
 
 
 def main():
     """
     Main function to run all program functions.
     """
-    hello_user()
+    #hello_user()
     details = get_user_details()
     rooms = get_property_details()
     # Convert rooms from strings to integers
