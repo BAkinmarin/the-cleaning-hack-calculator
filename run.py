@@ -164,8 +164,7 @@ def calculate_estimate(property_values):
     Calculates cleaning estimate using pre-defined formula based on 
     number of rooms provided by user.
     """
-    print(f'You entered {property_values[0]} Bedroom(s), {property_values[1]} Bathroom(s), {property_values[2]} Living-room(s) and {property_values[3]} Other room(s).')    
-    estimate_value = []
+    print(f'You entered {property_values[0]} Bedroom(s), {property_values[1]} Bathroom(s), {property_values[2]} Living-room(s) and {property_values[3]} Other room(s).')
     total_estimate = 0
 
     bedrooms = property_values[0] * 15
@@ -175,7 +174,7 @@ def calculate_estimate(property_values):
 
     # Round calculation down to 2 decimal places
     total_estimate = round(((bedrooms + bathrooms + livingrooms + otherrooms) * 1.15), 2)
-    estimate_value = total_estimate
+
     return f'Based on your entry, we estimate it will cost around £{total_estimate} to get your property cleaned.\n'
 
 
@@ -204,10 +203,14 @@ def main():
     Main function to run all program functions.
     """
     hello_user()
+
     # Declared as a global variable to enable access inside get_new_estimate()
     global details
     details = get_user_details()
+
+    global rooms
     rooms = get_property_details()
+
     # Convert rooms from strings to integers
     property_values = [int(num) for num in rooms]
     update_worksheet(details, rooms)
