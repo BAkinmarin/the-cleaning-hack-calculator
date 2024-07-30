@@ -62,34 +62,36 @@
 
 
 ## Program Flow - 
-> When the user loads the program, they are presented with a welcome message and instructions as seen:
+> When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program as seen below:
 ![Welcome Page](https://)
 
-> The user will then be asked to enter their name, mobile and email which will be validated before moving on to the next stage:
+> The user will then be asked to enter their name, mobile and email which will be validated before they are allowed to move on to the next stage:
 ![User Details](https://)
 
-> If validation fails, the user will be shown the following error messages depending on exception raised:
-![Missing Details](https://)
+> If validation fails, the user will be shown the following error messages depending on the exception raised:
+![Missing Name](https://)
 
 ![Invalid Mobile Number](https://)
 
 ![Invalid Email](https://)
 
-> Next, the user will be asked to provide number of bedrooms, bathrooms, etc:
+> Next, the user will be asked to provide number of bedrooms, bathrooms, livingrooms and any other rooms:
 ![No. of Bedrooms](https://)
 
 ![No. of Bathrooms](https://)
 
 ![No. of Livingrooms](https://)
 
-> The details provided will be displayed along with the estimate:
+![Any other rooms](https://)
+
+> The details provided will be displayed to the user along with their estimate:
 ![Cleaning Estimate](https://)
 
 > The user will then be asked if they want to continue i.e. obtain another estimate or exit the program:
 ![Continue or Exit](https://)
 
 > If the user selects continue, they will be asked to enter property details for a new estimate:
-![New Estimate](https://)
+![New Property Details](https://)
 
 > If the user selects exit, the program will stop running:
 ![Exit](https://)
@@ -100,25 +102,25 @@
 
 > Functionality to prompt user to enter only the specific piecce of information which fails validation.
 
-> Functionality to valid mobile to ensure only UK mobile numbers are provided.
+> Functionality to validate mobile number to ensure only UK mobile numbers are provided.
 
 
 <a name="tech"></a>
 # Technology Used
 ### Python
-Used to create the application
+Used to create the application.
 
 ### Heroku
-Used to deploy and host the application
+Used to deploy and host the application.
 
 ### Github
-Used to store the code
+Used to store the code.
 
 ### Gitpod
-IDE used for creating the application
+IDE used for creating the application.
 
 ### Git
-Used for version control
+Used for version control.
 
 <a name="testing"></a>
 # Testing
@@ -207,7 +209,7 @@ Error Msg: Please enter Y to play again or any other key to exit
 > Unable to get sequence of notification messages in email validation function working - program currently displays when user email is invalid but not when all details have been entered correctly. **Fixed**
 
 ### 
-> Unable to append calculated estimate to current row.
+> Unable to format estimate figure correctly to support appending to current row in worksheet.
 
 ### 
 > 
@@ -232,19 +234,21 @@ Error Msg: Please enter Y to play again or any other key to exit
 
 7. Click on the 'Config Vars' button.
 
-8. Supply a 'KEY' of "PORT" and 'Value' of "8000". Then click the 'Add' button.
+8. Supply a 'KEY' of "CREDS" and 'Value' of contents of creds.json file. Then click the 'Add' button.
 
-9. Add buildpacks to install future dependencies needed outside of the requirements file.
+9. Supply a 'KEY' of "PORT" and 'Value' of "8000". Then click the 'Add' button.
 
-10. Select 'Python' then 'Node.js' and click 'Save' - **Make sure they are in this order.**
+10. Add buildpacks to install future dependencies needed outside of the requirements file.
 
-11. Navigate to the deploy section and choose deployment method. 
+11. Select 'Python' then 'Node.js' and click 'Save' - **Make sure they are in this order.**
 
-12. To connect with github select 'Github' and confirm.
+12. Navigate to the deploy section and choose deployment method. 
 
-13. Search for repository, select it and click 'Connect'.
+13. To connect with github select 'Github' and confirm.
 
-14. To deploy, choose one of the following options: 
+14. Search for repository, select it and click 'Connect'.
+
+15. To deploy, choose one of the following options: 
 
 - Automatic deploys - meaning Heroku will rebuild the app everytime a new change is pushed.
   - For this option, choose the branch to deploy and click 'Enable automatic deploys'. 
@@ -252,9 +256,9 @@ Error Msg: Please enter Y to play again or any other key to exit
 
 - Manual deployment - which deploys current state of branch.
 
-15. Click 'Deploy branch'.
+16. Click 'Deploy branch'.
 
-16. Click 'Open App' to launch application.
+17. Click 'Open App' to launch application.
 
 <a name="credits"></a>
 ## Credits
