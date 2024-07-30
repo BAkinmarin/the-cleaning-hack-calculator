@@ -6,10 +6,10 @@
 
 #### Designed and Developed by Bola Akinmarin
 
-### **[Live site](https://)**
+### **[Live site](https://the-cleaning-hack-calculator-7f6b677fafbc.herokuapp.com/)**
 
 
-### **[Repository](https://)**
+### **[Repository](https://github.com/BAkinmarin/the-cleaning-hack-calculator)**
 
   
 ## Table of contents
@@ -38,7 +38,7 @@
 > Utilising Lucid Chart, I created a flow diagram to help visualise the steps and logic I needed for the project design and execution to be as efficient as possible.
 
 > Please see the below flow chart to better understand the initial design and concept.
-![Lucid Flow Chart](https://)
+![Lucid Flow Chart](assets/readme/tch-calculator-flowchart.png)
 
 ### Pre-Planning Structure
 
@@ -154,7 +154,7 @@ Used for version control.
 |Once new property details have been entered, user is provided with new estimate|Pass|
 |If user selects exit program, user is shown exit message and program ends|Pass|
 
-#### User tests
+#### User testing
 
 The following tests are on error handling throughout the project.
 If the error handling works as expected it will be marked as pass.
@@ -314,3 +314,6 @@ Multiple resources used to better understand the logic and flow of functions and
 
 ### Code Community
 > Other software developers who gave feedback on their experience whilst interacting with The cleaning Hack Calculator.
+
+### Family
+> Special thanks to my family for supporting with user testing and providing feedback on flow and experience.
