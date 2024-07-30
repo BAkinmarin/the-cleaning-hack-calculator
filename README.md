@@ -214,10 +214,11 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 
 ### Pep8 Checker tool
 
-> I used the Pep8 checker tool to validate my python code and ensure it was free from errors. As shown here:
+> I used the Pep8 checker tool to validate my python code to ensure it was free from errors as shown here:
 
 ![Pep8](assets/testing/pep8-checker.png)
-> Throughout the project, I had to do a lot of re-coding and restructuring to keep character length to the required 79 characters per line.
+
+> To keep within the length of 79 characters per line, I had to do a lot of re-coding and restructuring.
 
 <a name="bugs"></a>
 ## **Bugs**

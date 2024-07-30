@@ -58,6 +58,7 @@ def get_user_details():
         if all([validate_name(name), validate_mob(mob), validate_user(email)]):
             # Capitalize name once validated and before uploading to worksheet
             name = name.capitalize()
+            clear_terminal()
             print(f"\nThanks, {name}! Now, let's get you that estimate...")
             print('Please enter room details as whole numbers.')
             details_str = name, mob, email
@@ -74,7 +75,7 @@ def get_property_details():
         property_str = []
         bed_rooms = input('No. of bedrooms: \n')
         bath_rooms = input('No. of bathrooms (add toilets): \n')
-        living_rooms = input('No. of reception areas (add kitchen): \n')
+        living_rooms = input('No. of living areas (add kitchen): \n')
         other_rooms = input('Any other rooms (add conservatory, utility): \n')
 
         property_str = bed_rooms, bath_rooms, living_rooms, other_rooms
@@ -93,7 +94,7 @@ def validate_name(name):
     try:
         # Character length and alpha check inspired by Alan Bushell, Mentor
         if name == '' or len(name) < 2 or not name.isalpha():
-            raise NameError(f'Your name must be at least 2 letters.')
+            raise NameError(f'Your name must be at least 2 letters')
     except NameError as e:
         print(Fore.RED + f'Missing Data: {e}. Please try again.')
         print(Style.RESET_ALL)
@@ -109,7 +110,7 @@ def validate_mob(mob):
     """
     try:
         if len(mob) != 11 or not mob.isnumeric():
-            raise ValueError(f'Your number must be 11 digits.')
+            raise ValueError(f'Your number must be 11 digits')
     except ValueError as e:
         print(Fore.RED + f'Invalid Number: {e}. Please try again.')
         print(Style.RESET_ALL)
@@ -145,7 +146,7 @@ def validate_rooms(values):
     try:
         [int(value) for value in values]
         if len(values) != 4:
-            raise ValueError('You must provide number of rooms.')
+            raise ValueError('You must provide number of rooms')
     except ValueError as e:
         print(Fore.RED + f'Missing Info: {e}. Enter 0 if not applicable.')
         print(Style.RESET_ALL)
