@@ -128,7 +128,7 @@ def validate_user(email):
         email_format = validate_email(email)
         email = email_format.normalized
     except EmailNotValidError as e:
-        print(Fore.RED + str(e))
+        print(Fore.RED + 'Invalid Email: ' + str(e))
         print(Style.RESET_ALL)
         return False
 

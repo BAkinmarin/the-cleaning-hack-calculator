@@ -70,19 +70,23 @@ This information allows the business owner to predict how long a job might take 
 
 ## Program Flow
 > When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program as seen below:
-![Welcome Page](https://)
+
+![Welcome Page](assets/readme/tch-calculator-welcome.png)
 
 > The user will then be asked to enter their name, mobile and email which will be validated before they are allowed to move on to the next stage:
-![User Details](https://)
 
-> If validation fails, the user will be shown the following error messages depending on the exception raised:
-![Missing Name](https://)
+![User Details](assets/readme/tch-details-passed.png)
 
-![Invalid Mobile Number](https://)
+> If validation fails, the user will be shown the relevant error messages depending on the exception raised:
+
+![Invalid Name](https://)
+
+![Invalid Mobile Number](assets/readme/tch-calculator-invalid-mobile.png)
 
 ![Invalid Email](https://)
 
 > Next, the user will be asked to provide number of bedrooms, bathrooms, livingrooms and any other rooms:
+
 ![No. of Bedrooms](https://)
 
 ![No. of Bathrooms](https://)
@@ -92,15 +96,19 @@ This information allows the business owner to predict how long a job might take 
 ![Any other rooms](https://)
 
 > The details provided will be displayed to the user along with their estimate:
+
 ![Cleaning Estimate](https://)
 
 > The user will then be asked if they want to continue i.e. obtain another estimate or exit the program:
+
 ![Continue or Exit](https://)
 
 > If the user selects continue, they will be asked to enter property details for a new estimate:
+
 ![New Property Details](https://)
 
 > If the user selects exit, the program will stop running:
+
 ![Exit](https://)
 
 <a name="left"></a>
@@ -208,7 +216,7 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 
 > I used the Pep8 checker tool to validate my python code and ensure it was free from errors. As shown here:
 
-![Pep8](https://)
+![Pep8](assets/testing/pep8-checker.png)
 > Throughout the project, I had to do a lot of re-coding and restructuring to keep character length to the required 79 characters per line.
 
 <a name="bugs"></a>
@@ -221,7 +229,7 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 > Unable to convert estimate data type to support appending to current row in worksheet.
 
 ### 
-> Unable to add validation to name to stop users entering numbers into name field.
+> Unable to add validation to name to stop users entering numbers into name field. **Fixed**
 
 <a name="deployment"></a>
 ## Deployment
@@ -272,22 +280,22 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 <a name="credits"></a>
 ## Credits
 
-Multiple resources used to better understand the logic and flow of functions and classes Python.
+Multiple resources used to better understand the logic and flow of functions and capabilities of Python.
 
 ### [Stack Overflow](https://stackoverflow.com/questions/8022530/how-to-check-for-valid-email-address)
 > Useful for learning how to validate email addresses.
 
-### [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-make-a-calculator-program-in-python-3)
-> Useful step-by-step guide on how to create a calculator program.
-
 ### [PyPi](https://pypi.org/project/email-validator/)
 > A robust email address syntax validation library installed for use with this project.
+
+### [PyPi](https://pypi.org/project/colorama/)
+> Useful for adding ANSI escape character sequences to add color to terminal text.
 
 ### [Medium](https://medium.com/hacktive-devs/gspread-automate-google-sheet-with-python-dc1fa7c65c21)
 > Useful guide by Sogo Ogundowole on GSpread: Automate Google Sheet with Python. Helped broaden my understanding of GSpread methods and applications.
 
 ### [Finxter](https://blog.finxter.com/how-to-print-italic-text-in-python/)
-> Useful guide for adding styles to text in Python.
+> Useful guide for adding styles to text.
 
 
 <a name="content"></a>
@@ -304,8 +312,6 @@ Multiple resources used to better understand the logic and flow of functions and
 
 ### Youtube
 > One of the most accessible learning platforms with a global reach. Very useful in broadening my approach to coding, providing insights into coding concepts from different perspectives.
-
-### Digital Ocean
 
 <a name="acknowlegements"></a>
 ## Acknowledgements
