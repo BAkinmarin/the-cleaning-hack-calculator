@@ -48,9 +48,9 @@
 
 - Name
 
-- Mobile 
+- Mobile Number
 
-- Email
+- Email Address
 
 This information feeds into the business owner's lead generation and management system.
 
@@ -61,9 +61,9 @@ This information feeds into the business owner's lead generation and management 
 
 - No. of Bathrooms 
 
-- No. of Livingrooms
+- No. of Living areas / Receptions
 
-- Other rooms
+- Other rooms i.e. Conservatory, Utility
 
 This information allows the business owner to predict how long a job might take ans assign resources accordingly. 
 
@@ -77,11 +77,11 @@ This information allows the business owner to predict how long a job might take 
 
 > If validation fails at this stage, the user will be shown the corresponding error message or messages depending on the exception raised:
 
-![Invalid Name](https://)
+![Invalid Name](assets/readme/tch-calculator-invalid-name.png)
 
 ![Invalid Mobile Number](assets/readme/tch-calculator-invalid-mobile.png)
 
-![Invalid Email](https://)
+![Invalid Email](assets/readme/tch-calculator-invalid-email.png)
 
 ![All Details Invalid](assets/readme/tch-calculator-all-details-invalid.png)
 
@@ -145,7 +145,7 @@ Used for version control.
 
 | Test | Result |
 |--|--|
-|On run programme the welcome message and instructions appear|Pass|
+|On run program, the welcome message and instructions appear|Pass|
 |After instructions, user is prompted for name|Pass|
 |Once name is input user is prompted for mobile number|Pass|
 |Once mobile number is input, user is prompted for email address|Pass|
