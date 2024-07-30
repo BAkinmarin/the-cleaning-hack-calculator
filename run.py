@@ -45,10 +45,12 @@ def get_user_details():
     while True:
         details_str = []
         name_str = input('Enter your name: \n')
-        mobile_str = input('Enter your mobile nuumber: \n')
+        mobile_str = input('Enter your mobile number: \n')
         email_str = input('Enter your email address: \n')
 
         if validate_user_name(name_str) and validate_user_mobile(mobile_str) and validate_user_email(email_str):
+            # Capitalize name once validated and before uploading to worksheet
+            name_str = name_str.capitalize()
             print(f"\nThanks, {name_str}! Now, let's get you that estimate...")
             print('This estimate is subject to an increase depending on property condition on arrival.\n')
             print('Please enter room details as whole numbers.')
@@ -102,8 +104,8 @@ def validate_user_mobile(mobile_str):
     Raises ValueError if conversion fails.
     """
     try:
-        if len(mobile_str) != 11:
-            raise ValueError(f'Your mobile number must be 11 digits. You entered {len(mobile_str)}')
+        if len(mobile_str) != 11 or mobile_str.isalnum:
+            raise ValueError(f'Your mobile number must be 11 digits and numbers only.')
     except ValueError as e:
         print(f'Invalid Mobile Number: {e}. Please enter a valid UK number.\n')
         return False
