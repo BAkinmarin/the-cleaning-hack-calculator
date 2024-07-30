@@ -8,6 +8,10 @@ from email_validator import validate_email, EmailNotValidError
 # Import module to clear terminal
 import os
 
+# Import colorama to add color to terminal input/output
+import colorama
+from colorama import Fore, Back, Style
+
 # APIs for project scope
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -24,10 +28,12 @@ def hello_user():
     """
     Display welcome message and instructions to user.
     """
-    print('WELCOME TO THE CLEANING HACK!')
-    print('TRANSFORMING SPACES TO TRANSFORM MINDS!\n')
+    print(Fore.BLUE + 'WELCOME TO THE CLEANING HACK!')
+    print('TRANSFORMING SPACES TO TRANSFORM MINDS!')
+    print(Style.RESET_ALL)
     print('For your free cleaning estimate, please enter your details.')
-    print('DO NOT forget to press ENTER after each input...\n')
+    print(Fore.RED + 'DO NOT forget to press ENTER after each input!')
+    print(Style.RESET_ALL)
 
 
 # This idea was inspired by Alan Bushell, Code Institute Mentor
@@ -92,7 +98,8 @@ def validate_user_name(name_str):
         if name_str == '' or len(name_str) < 2 or not name_str.isalpha():
             raise NameError(f'Your name must be at least 2 characters and letters only.')
     except NameError as e:
-        print(f'Missing Data: {e}. Please try again.\n')    
+        print(Fore.RED + f'Missing Data: {e}. Please try again.')    
+        print(Style.RESET_ALL)
         return False
 
     return True    
@@ -104,10 +111,11 @@ def validate_user_mobile(mobile_str):
     Raises ValueError if conversion fails.
     """
     try:
-        if len(mobile_str) != 11 or mobile_str.isalnum:
+        if len(mobile_str) != 11 or not mobile_str.isnumeric():
             raise ValueError(f'Your mobile number must be 11 digits and numbers only.')
     except ValueError as e:
-        print(f'Invalid Mobile Number: {e}. Please enter a valid UK number.\n')
+        print(Fore.RED + f'Invalid Mobile Number: {e}. Please enter a valid UK number.')
+        print(Style.RESET_ALL)
         return False
 
     return True    
@@ -123,8 +131,8 @@ def validate_user_email(email_str):
         email_format = validate_email(email_str)
         email = email_format.normalized
     except EmailNotValidError as e:
-        print(str(e))
-        print()
+        print(Fore.RED + str(e))
+        print(Style.RESET_ALL)
         return False
 
     return True   
@@ -142,7 +150,8 @@ def validate_rooms(values):
         if len(values) != 4:
             raise ValueError('You must provide number of rooms.')
     except ValueError as e:
-        print(f'Missing Details: {e}. Please enter 0 if not applicable.\n')        
+        print(Fore.RED + f'Missing Details: {e}. Please enter 0 if not applicable.')
+        print(Style.RESET_ALL)        
         return False
 
     return True                        
@@ -206,7 +215,7 @@ def main():
     """
     Main function to run all program functions.
     """
-    #hello_user()
+    hello_user()
 
     # Declared as a global variable to enable access inside get_new_estimate()
     global details
