@@ -69,15 +69,13 @@ This information allows the business owner to predict how long a job might take 
 
 
 ## Program Flow
-> When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program as seen below:
+> When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program as seen below.
+
+> The user will also be prompted to enter their name, followed by their mobile number and email address which will be validated before they can then move on to entering relevant property details.
 
 ![Welcome Page](assets/readme/tch-calculator-welcome.png)
 
-> The user will then be asked to enter their name, mobile and email which will be validated before they are allowed to move on to the next stage:
-
-![User Details](assets/readme/tch-details-passed.png)
-
-> If validation fails, the user will be shown the relevant error messages depending on the exception raised:
+> If validation fails at this stage, the user will be shown the corresponding error message or messages depending on the exception raised:
 
 ![Invalid Name](https://)
 
@@ -85,31 +83,31 @@ This information allows the business owner to predict how long a job might take 
 
 ![Invalid Email](https://)
 
-> Next, the user will be asked to provide number of bedrooms, bathrooms, livingrooms and any other rooms:
+![All Details Invalid](assets/readme/tch-calculator-all-details-invalid.png)
 
-![No. of Bedrooms](https://)
+> Next, the user will be asked to provide number of bedrooms, bathrooms, living areas / receptions and any other rooms:
 
-![No. of Bathrooms](https://)
+![No. of Bedrooms](assets/readme/tch-calculator-bedrooms-prompt.png)
 
-![No. of Livingrooms](https://)
+![No. of Bathrooms](assets/readme/tch-calculator-bathrooms-prompt.png)
 
-![Any other rooms](https://)
+![No. of Living areas](assets/readme/tch-calculator-living-areas-prompt.png)
 
-> The details provided will be displayed to the user along with their estimate:
+![Any other rooms](assets/readme/tch-calculator-other-rooms-prompt.png)
 
-![Cleaning Estimate](https://)
+> The details provided will be displayed to the user along with their estimate.
 
-> The user will then be asked if they want to continue i.e. obtain another estimate or exit the program:
+> Additionally, the user will be asked if they would like to get a new estimate or exit the program as seen below:
 
-![Continue or Exit](https://)
+![Cleaning Estimate](assets/readme/tch-calculator-estimate.png)
 
-> If the user selects continue, they will be asked to enter property details for a new estimate:
+> If the user selects new estimate, they will be asked to enter property details for a new estimate:
 
-![New Property Details](https://)
+![New Details](assets/readme/tch-calculator-new-room-details-prompt.png)
 
-> If the user selects exit, the program will stop running:
+> If the user selects exit, they will be presented with an exit message and the program will stop running:
 
-![Exit](https://)
+![Exit Message](assets/readme/tch-calculator-exit-message.png)
 
 <a name="left"></a>
 

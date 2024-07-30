@@ -96,7 +96,7 @@ def validate_name(name):
         if name == '' or len(name) < 2 or not name.isalpha():
             raise NameError(f'Your name must be at least 2 letters')
     except NameError as e:
-        print(Fore.RED + f'Missing Data: {e}. Please try again.')
+        print(Fore.RED + f'Invalid Data: {e}. Please try again.')
         print(Style.RESET_ALL)
         return False
 
