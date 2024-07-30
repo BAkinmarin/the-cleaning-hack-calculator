@@ -24,8 +24,9 @@ def hello_user():
     """
     Display welcome message and instructions to user.
     """
-    print('Welcome to The Cleaning Hack!')
-    print('To get your free cleaning estimate, please provide your contact details.')
+    print('WELCOME TO THE CLEANING HACK!')
+    print('TRANSFORMING SPACES TO TRANSFORM MINDS!\n')
+    print('For your free cleaning estimate, please enter your details.')
     print('DO NOT forget to press ENTER after each input...\n')
 
 
@@ -44,12 +45,12 @@ def get_user_details():
     while True:
         details_str = []
         name_str = input('Enter your name: \n')
-        mobile_str = input('Enter your mobile number: \n')
+        mobile_str = input('Enter your mobile nuumber: \n')
         email_str = input('Enter your email address: \n')
 
         if validate_user_name(name_str) and validate_user_mobile(mobile_str) and validate_user_email(email_str):
             print(f"\nThanks, {name_str}! Now, let's get you that estimate...")
-            print('Please note that this amount may increase depending on condition upon arrival.\n')
+            print('This estimate is subject to an increase depending on property condition on arrival.\n')
             print('Please enter room details as whole numbers.')
             
             details_str = name_str, mobile_str, email_str
@@ -85,8 +86,9 @@ def validate_user_name(name_str):
     Raises UnicodeError if validation fails.
     """        
     try:
-        if name_str == '':
-            raise NameError(f'You failed to enter your name.')
+        # Character length and alpha check inspired by Alan Bushell, Mentor
+        if name_str == '' or len(name_str) < 2 or not name_str.isalpha():
+            raise NameError(f'Your name must be at least 2 characters and letters only.')
     except NameError as e:
         print(f'Missing Data: {e}. Please try again.\n')    
         return False
@@ -101,7 +103,7 @@ def validate_user_mobile(mobile_str):
     """
     try:
         if len(mobile_str) != 11:
-            raise ValueError(f'Your mobile number needs to be 11 digits. You entered {len(mobile_str)}')
+            raise ValueError(f'Your mobile number must be 11 digits. You entered {len(mobile_str)}')
     except ValueError as e:
         print(f'Invalid Mobile Number: {e}. Please enter a valid UK number.\n')
         return False
@@ -175,7 +177,7 @@ def calculate_estimate(property_values):
     # Round calculation down to 2 decimal places
     total_estimate = round(((bedrooms + bathrooms + livingrooms + otherrooms) * 1.15), 2)
 
-    return f'Based on your entry, we estimate it will cost around £{total_estimate} to get your property cleaned.\n'
+    return f'We estimate it will cost around £{total_estimate} to get your property cleaned.\n'
 
 
 def get_new_estimate():
@@ -202,7 +204,7 @@ def main():
     """
     Main function to run all program functions.
     """
-    hello_user()
+    #hello_user()
 
     # Declared as a global variable to enable access inside get_new_estimate()
     global details
