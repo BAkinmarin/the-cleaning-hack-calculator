@@ -28,10 +28,10 @@ def hello_user():
     """
     Display welcome message and instructions to user.
     """
-    print(Fore.BLUE + 'WELCOME TO THE CLEANING HACK!')
-    print('TRANSFORMING SPACES TO TRANSFORM MINDS!')
+    print('\x1B[1m' + 'Welcome to The Cleaning Hack' + '\x1B[0m')
+    print('\033[1;3m' + 'Transforming Spaces To Transform Minds' + '\033[0m')
     print(Style.RESET_ALL)
-    print('For your free cleaning estimate, please enter your details.')
+    print('To get a free cleaning estimate, please enter your details.')
     print(Fore.RED + 'DO NOT forget to press ENTER after each input!')
     print(Style.RESET_ALL)
 
@@ -169,7 +169,7 @@ def update_worksheet(details, rooms):
     # Declared as global variable to enable access inside other functions and keep personalised theme
     global user_name 
     user_name = user[-1][0]
-    print(f'Thanks, {user_name}! Your details have been accepted! \nJust getting your estimate now...')
+    print(f'Thanks, {user_name}! Just getting your estimate now...\n')
 
 
 def calculate_estimate(property_values):
@@ -177,7 +177,7 @@ def calculate_estimate(property_values):
     Calculates cleaning estimate using pre-defined formula based on 
     number of rooms provided by user.
     """
-    print(f'You entered {property_values[0]} Bedroom(s), {property_values[1]} Bathroom(s), {property_values[2]} Living-room(s) and {property_values[3]} Other room(s).')
+    print(f'The following estimate is based on your entry of:\n {property_values[0]} Bedroom(s), {property_values[1]} Bathroom(s), {property_values[2]} Living-room(s) and {property_values[3]} Other room(s).\n')
     total_estimate = 0
 
     bedrooms = property_values[0] * 15
@@ -188,7 +188,7 @@ def calculate_estimate(property_values):
     # Round calculation down to 2 decimal places
     total_estimate = round(((bedrooms + bathrooms + livingrooms + otherrooms) * 1.15), 2)
 
-    return f'We estimate it will cost around £{total_estimate} to get your property cleaned.\n'
+    return f'Your estimated total is £{total_estimate}.\n'
 
 
 def get_new_estimate():

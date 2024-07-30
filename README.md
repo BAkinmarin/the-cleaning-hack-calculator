@@ -288,6 +288,9 @@ Multiple resources used to better understand the logic and flow of functions and
 ### [Medium](https://medium.com/hacktive-devs/gspread-automate-google-sheet-with-python-dc1fa7c65c21)
 > Useful guide by Sogo Ogundowole on GSpread: Automate Google Sheet with Python. Helped broaden my understanding of GSpread methods and applications.
 
+### [Finxter](https://blog.finxter.com/how-to-print-italic-text-in-python/)
+> Useful guide for adding styles to text in Python.
+
 
 <a name="content"></a>
 ## Content and Resources
