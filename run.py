@@ -58,7 +58,6 @@ def get_user_details():
             # Capitalize name once validated and before uploading to worksheet
             name_str = name_str.capitalize()
             print(f"\nThanks, {name_str}! Now, let's get you that estimate...")
-            print('This estimate is subject to an increase depending on property condition on arrival.\n')
             print('Please enter room details as whole numbers.')
             
             details_str = name_str, mobile_str, email_str
@@ -188,7 +187,7 @@ def calculate_estimate(property_values):
     # Round calculation down to 2 decimal places
     total_estimate = round(((bedrooms + bathrooms + livingrooms + otherrooms) * 1.15), 2)
 
-    return f'Your estimated total is £{total_estimate}.\n'
+    return f'Your estimated total is £{total_estimate}.'
 
 
 def get_new_estimate():
@@ -206,8 +205,11 @@ def get_new_estimate():
             update_worksheet(details, new_rooms)
             new_estimate = calculate_estimate(new_property_values)
             print(new_estimate)  
+            print('\033[1;3m' + 'Note: Your estimate may increase depending on property condition on arrival.' + '\033[0m') 
+            print()
         else:
-            print(f'Thanks for your enquiry, {user_name}! A member of our team will be in touch within 24 hours.')  
+            clear_terminal()
+            print(f'Thanks for your enquiry, {user_name}! Our team will be in touch within 24 hours.')
             break  
 
 
@@ -229,7 +231,8 @@ def main():
     update_worksheet(details, rooms)
     estimate = calculate_estimate(property_values)
     print(estimate)
+    print('\033[1;3m' + 'Note: Your estimate may increase depending on property condition on arrival.' + '\033[0m') 
+    print()
     get_new_estimate()
-
 
 main()

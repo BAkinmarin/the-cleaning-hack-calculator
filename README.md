@@ -276,9 +276,6 @@ Multiple resources used to better understand the logic and flow of functions and
 ### [Stack Overflow](https://stackoverflow.com/questions/8022530/how-to-check-for-valid-email-address)
 > Useful for learning how to validate email addresses.
 
-### [TechWithNash](https://www.youtube.com/watch?v=4AycrAPVKV0)
-> Useful tutorial on how to build an advanced calculator with Python.
-
 ### [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-make-a-calculator-program-in-python-3)
 > Useful step-by-step guide on how to create a calculator program.
 
