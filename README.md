@@ -2,7 +2,7 @@
 
 
 ## A Python command line calculator
-> This application is a Python based calculation for a real cleaning company, The Cleaning Hack, which is used to produce a free cleaning estimate for potential clients. The application requires the user to enter their name, mobile number and email which is validated prior to entering the details required to produce an estimate such as number of bedrooms, bathrooms, living spaces.
+> This application is a Python based calculation for a real cleaning company, The Cleaning Hack, which is used to produce a free cleaning estimate for potential clients. The application requires the user to enter their name, mobile number and email which is validated prior to entering the details required to produce an estimate such as number of bedrooms, bathrooms, living spaces. These details are then uploaded to a Google Worksheet for the business owner to reference in follow-up conversations with the prospective client.
 
 #### Designed and Developed by Bola Akinmarin
 
@@ -31,15 +31,18 @@
 <a name="plan"></a>
 ### Pre-project Planning
 
-> 
+> For my portfolio project 3, I wanted to address a real need hence my decision to create a cleaning estimate calculator for The Cleaning Hack, a real and active cleaning business. 
 
-> Please see the below flow chart to better understand the initial design and concept
+> Upon confirmation from the business owner that there was a gap in their processes where automation of cleaning estimates and, lead tracking were concerned, I was resolved in my decision.
+
+> Utilising Lucid Chart, I created a flow diagram to help visualise the steps and logic I needed for the project design and execution to be as efficient as possible.
+
+> Please see the below flow chart to better understand the initial design and concept.
 ![Lucid Flow Chart](https://)
 
 ### Pre-Planning Structure
 
 ### Structure
-
 
 #### User Details
 
@@ -48,6 +51,8 @@
 - Mobile 
 
 - Email
+
+This information feeds into the business owner's lead generation and management system.
 
 
 #### Property Details
@@ -58,10 +63,12 @@
 
 - No. of Livingrooms
 
-- Any other rooms
+- Other rooms
+
+This information allows the business owner to predict how long a job might take ans assign resources accordingly. 
 
 
-## Program Flow - 
+## Program Flow
 > When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program as seen below:
 ![Welcome Page](https://)
 
@@ -132,69 +139,70 @@ Used for version control.
 
 | Test | Result |
 |--|--|
-|On run programme the welcome message appears|Pass|
-|After welcome message user prompted for name|Pass|
-|Once name is input the menu option presents|Pass|
-|Selecting 1 from the menu starts the game|Pass|
-|Selecting 2 from the menu opens the rules|Pass|
-|Dealer hand hidden during first round|Pass|
-|When player stands dealer card is shown|Pass|
-|When player stands the endgame calculation runs to determin winner|Pass|
-|If player wins the player is presented with a win message|Pass|
-|If the player wins the ascii art for bender is shown|Pass|
-|If the dealer wins the dealer score is incremented|Pass|
-|If the dealer wins the player is given a lose message|Pass|
-|If the hand is a tie the player is notified|Pass|
-|If the hand is a tie, neither player or dealers score increases|Pass|
+|On run programme the welcome message and instructions appear|Pass|
+|After instructions, user is prompted for name|Pass|
+|Once name is input user is prompted for mobile number|Pass|
+|Once mobile number is input, user is prompted for email address|Pass|
+|Feedback message shows with further instructions on how to enter property details|Pass|
+|After instructions, user is prompted for no. of bedrooms|Pass|
+|Once no. of bedrooms is input, user is prompted for no. of bathrooms|Pass|
+|Once no. of bathrooms is input, user is prompted for no. of livingrooms|Pass|
+|Once no. of livingrooms is input, user is prompted for other rooms|Pass|
+|Once no. of other rooms is input, feedback message is displayed with estimate|Pass|
+|User is then asked if they want to obtain another quote or exit program|Pass|
+|If user selects obtain another quote, user is again prompted to enter new property details|Pass|
+|Once new property details have been entered, user is provided with new estimate|Pass|
+|If user selects exit program, user is shown exit message and program ends|Pass|
 
 #### User tests
 
-The following tests are on the error handling throughout the project.
+The following tests are on error handling throughout the project.
 If the error handling works as expected it will be marked as pass.
-If it does not work as expected then it will be marked as a fail.
-> Enter Name Field
-Error Msg: User must enter a name of at least 3 characters and it must be all letters.
+If the error handling does not work as expected it will be marked as fail.
+
+> Enter Name
+Error Msg: User must enter a name of at least two characters and it must be all letters.
 
 | Test | Result |
 |--|--|
-|User enters a name of less than 3 characters | Pass|
-|User tried to enter 3 characters with a number|Pass|
+|User tried to enter a name of less than two characters|Not Tested|
+|User tried to enter a hyphenated name|Pass|
+|User tried to enters an empty string|Pass|
+|User tried to enter a name with a space in it|Pass|
+|User tried to enter numbers|Fail|
+
+> Enter Mobile Number
+Error Msg: Your number needs to be 11 digits. Please enter a valid UK number.
+
+| Test | Result |
+|--|--|
+|User tried to enter a number less than 11 digits|Pass|
+|User tried to enter a letter|Not Tested|
+|User tried to enter an empty selection|Pass|
+|User tried to enter a symbol|Not Tested|
+|User tried to enter a special character|Not Tested|
+
+> Enter Email Address
+Error Msg: Various EmailNotValidError messages.
+
+| Test | Result |
+|--|--|
+|User tried to enter email without @ symbol|Pass|
+|User tried to enter email without domain|Not Tested|
 |User tried to enter an empty string|Pass|
-|User tried to enter a name with a space in it|Fail|
+|User tried to enter email without preceeding name before @ symbol|Pass|
+|User tried to enter a special character|Not Tested|
 
-While I expected the error handling to deal with names of less than 3 characters and only letters, I did not think ahead in case users would want to add multiple word names. For example: 'Handsome Joe'. This will throw an error to the user and advise them of the Error Msg above. 
-
-> Main menu options
-Error Msg: Please select 1 to start game or 2 to read the rules
-
-| Test | Result |
-|--|--|
-|User tried to enter a number other than 1 or 2 | Pass|
-|User tried to enter a letter |Pass|
-|User tried to enter an empty selection|Pass|
-|User tried to enter a special symbol|Pass|
-
-> Hit or stand option
-Error Msg: Please enter H to hit or S to stand
-As I have the function set to accept the input as .lower() either case style of H(h) or S(s) is considered valid in this programme
+> Enter Property Details
+Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 
 | Test | Result |
 |--|--|
-|User tried to enter a number on hit or stand choice | Pass|
-|User tried to enter a letter other than H or S |Pass|
-|User tried to enter an empty selection|Pass|
-|User tried to enter a special symbol|Pass|
+|User tried to enter a letter|Not Tested|
+|User tried to enter an empty string|Pass|
+|User tried to enter a special character|Not Tested|
+|User tried to enter a mix of letters and numbers|Not Tested|
 
-The following tests will show pass if the functionality works as intended or fail if it does not
-> Play again option
-Error Msg: Please enter Y to play again or any other key to exit
-
-| Test | Result |
-|--|--|
-|User tried to enter y to play again  | Pass|
-|User tried to enter a number to exit|Pass|
-|User tried to enter any other letter than y to exit|Pass|
-|User tried to enter a an empty string to exit |Fail|
 
 ### Pep8 Checker tool
 
@@ -209,10 +217,10 @@ Error Msg: Please enter Y to play again or any other key to exit
 > Unable to get sequence of notification messages in email validation function working - program currently displays when user email is invalid but not when all details have been entered correctly. **Fixed**
 
 ### 
-> Unable to format estimate figure correctly to support appending to current row in worksheet.
+> Unable to convert estimate data type to support appending to current row in worksheet.
 
 ### 
-> 
+> Unable to add validation to name to stop users entering numbers into name field.
 
 <a name="deployment"></a>
 ## Deployment
