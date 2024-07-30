@@ -4,7 +4,7 @@
 ## A Python command line calculator
 > This application is a Python based calculation for a real cleaning company, The Cleaning Hack, which is used to produce a free cleaning estimate for potential clients. The application requires the user to enter their name, mobile number and email which is validated prior to entering the details required to produce an estimate such as number of bedrooms, bathrooms, living spaces.
 
-### - By Bola Akinmarin
+#### Designed and Developed by Bola Akinmarin
 
 ### **[Live site](https://)**
 
@@ -207,7 +207,7 @@ Error Msg: Please enter Y to play again or any other key to exit
 > Unable to get sequence of notification messages in email validation function working - program currently displays when user email is invalid but not when all details have been entered correctly. **Fixed**
 
 ### 
->  
+> Unable to append calculated estimate to current row.
 
 ### 
 > 
@@ -216,43 +216,45 @@ Error Msg: Please enter Y to play again or any other key to exit
 ## Deployment
 
 ####
-Navigate to heroku.com & log in.
+> To deploy the project to Heroku, I followed the steps outlined below:
 
-Click "new" and create a new App.
+1. Prepare run.py file by adding a new line character ("\n") at the end of the text inside all input methods.
 
-Give the application a name and then choose your region and Click "Create app".
+2. Create list of requirements necessary for program to run on heroku by typing "pip3 freeze > requirements.txt" into the command line.
 
-On the next page click on the Settings tab to adjust the settings.
+3. Navigate to heroku.com and log in.
 
-Click on the 'config vars' button.
+4. Click "New" to create a new App.
 
-Supply a KEY of PORT and it's value of 8000. Then click on the "add" button.
+5. Assign name to application, choose region and Click 'Create New App'.
 
-Buildpacks now need to be added. 
+6. On the next page click on the 'Settings' tab to adjust settings.
 
-These install future dependancies that we need outside of the requirements file.
+7. Click on the 'Config Vars' button.
 
-Select Python first and then node.js and click save. 
+8. Supply a 'KEY' of "PORT" and 'Value' of "8000". Then click the 'Add' button.
 
-**Make sure they are in this order.**
+9. Add buildpacks to install future dependencies needed outside of the requirements file.
 
-Then go to the deploy section and choose your deployment method. 
+10. Select 'Python' then 'Node.js' and click 'Save' - **Make sure they are in this order.**
 
-To connect with github select github and confirm.
+11. Navigate to the deploy section and choose deployment method. 
 
-Search for your repository select it and click connect.
+12. To connect with github select 'Github' and confirm.
 
-You can choose to either deploy using automatic deploys which means heroku will rebuild the app everytime you push your changes. 
+13. Search for repository, select it and click 'Connect'.
 
-For this option choose the branch to deploy and click enable automatic deploys. 
+14. To deploy, choose one of the following options: 
 
-This can be changed at a later date to manual. 
+- Automatic deploys - meaning Heroku will rebuild the app everytime a new change is pushed.
+  - For this option, choose the branch to deploy and click 'Enable automatic deploys'. 
+  - This can be changed to manual deployment at a later stage.
 
-Manual deployment deploys the current state of a branch.
+- Manual deployment - which deploys current state of branch.
 
-Click deploy branch.
+15. Click 'Deploy branch'.
 
-We can now click on the open App button above to view our application.
+16. Click 'Open App' to launch application.
 
 <a name="credits"></a>
 ## Credits
@@ -271,11 +273,15 @@ Multiple resources used to better understand the logic and flow of functions and
 ### [PyPi](https://pypi.org/project/email-validator/)
 > A robust email address syntax validation library installed for use with this project.
 
+### [Medium](https://medium.com/hacktive-devs/gspread-automate-google-sheet-with-python-dc1fa7c65c21)
+> Useful guide by Sogo Ogundowole on GSpread: Automate Google Sheet with Python. Helped broaden my understanding of GSpread methods and applications.
+
+
 <a name="content"></a>
 ## Content and Resources
 
 ### w3 schools
-> Used to reference Python Structure.
+> Used to reference Python Structure and play around with code ideas prior to including them in my project.
 
 ### Code Institute
 > Project created in line with course content and within project 3 scope.
@@ -292,7 +298,7 @@ Multiple resources used to better understand the logic and flow of functions and
 ## Acknowledgements
 
 ### Alan Bushell
-> My mentor in the CI who provided me with great feedback and guidance at the inception of this project.
+> My mentor who provided me with great feedback and guidance at the inception of this project, helping to keep at the forefront the requirements for a successful project.
 
-### External Community
-> 
+### Code Community
+> Other software developers who gave feedback on their experience whilst interacting with The cleaning Hack Calculator.
