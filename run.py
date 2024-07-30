@@ -72,18 +72,18 @@ def get_property_details():
     Get property details from user then run validation.
     """
     while True:
-        property_str = []
+        val = []
         bed_rooms = input('No. of bedrooms: \n')
         bath_rooms = input('No. of bathrooms (add toilets): \n')
         living_rooms = input('No. of living areas (add kitchen): \n')
         other_rooms = input('Any other rooms (add conservatory, utility): \n')
 
-        property_str = bed_rooms, bath_rooms, living_rooms, other_rooms
+        val = bed_rooms, bath_rooms, living_rooms, other_rooms
 
-        if validate_rooms(property_str):
+        if validate_rooms(val):
             print()
 
-        return property_str
+        return val
 
 
 def validate_name(name):
@@ -145,10 +145,10 @@ def validate_rooms(values):
     """
     try:
         [int(value) for value in values]
-        if len(values) != 4:
-            raise ValueError('You must provide number of rooms')
+        if len(values) != 4 or not values.isdigit():
+            raise ValueError('You must provide no. of rooms as whole digits')
     except ValueError as e:
-        print(Fore.RED + f'Missing Info: {e}. Enter 0 if not applicable.')
+        print(Fore.RED + f'Invalid Data: {e}. Enter 0 if not applicable.')
         print(Style.RESET_ALL)
         return False
 

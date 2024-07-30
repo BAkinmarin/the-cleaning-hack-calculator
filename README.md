@@ -159,6 +159,7 @@ Used for version control.
 |If user selects obtain another quote, user is again prompted to enter new property details|Pass|
 |Once new property details have been entered, user is provided with new estimate|Pass|
 |If user selects exit program, user is shown exit message and program ends|Pass|
+|Program is accessible on mobile phones|Not Tested|
 
 #### User testing
 
@@ -167,7 +168,7 @@ If the error handling works as expected it will be marked as pass.
 If the error handling does not work as expected it will be marked as fail.
 
 > Enter Name
-Error Msg: User must enter a name of at least two characters and it must be all letters.
+Error Msg: Your name must be at least 2 characters. Please try again.
 
 | Test | Result |
 |--|--|
@@ -178,7 +179,7 @@ Error Msg: User must enter a name of at least two characters and it must be all 
 |User tried to enter numbers|Fail|
 
 > Enter Mobile Number
-Error Msg: Your number needs to be 11 digits. Please enter a valid UK number.
+Error Msg: Your number must be 11 digits. Please try again.
 
 | Test | Result |
 |--|--|
@@ -204,10 +205,10 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 
 | Test | Result |
 |--|--|
-|User tried to enter a letter|Not Tested|
-|User tried to enter an empty string|Pass|
-|User tried to enter a special character|Not Tested|
-|User tried to enter a mix of letters and numbers|Not Tested|
+|User tried to enter a letter|Fail|
+|User tried to enter an empty string|Not Tested|
+|User tried to enter a special character|Fail|
+|User tried to enter a mix of letters and numbers|Fail|
 
 
 ### Pep8 Checker tool
@@ -221,14 +222,17 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 <a name="bugs"></a>
 ## **Bugs**
 
-### Notification Message- Details Complete
+### Feedback Message - Details Accepted
 > Unable to get sequence of notification messages in email validation function working - program currently displays when user email is invalid but not when all details have been entered correctly. **Fixed**
 
-### 
+### Update Worksheet - Estimate Value
 > Unable to convert estimate data type to support appending to current row in worksheet.
 
-### 
+### Validation - User Name Field
 > Unable to add validation to name to stop users entering numbers into name field. **Fixed**
+
+### Validation - Property Details
+> Unable to handle exceptions for special characters or alphabets in number of rooms fields.
 
 <a name="deployment"></a>
 ## Deployment
