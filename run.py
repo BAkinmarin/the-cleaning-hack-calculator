@@ -96,15 +96,13 @@ def validate_name(name):
     Raises relevant ValueError if validation fails.
     """
     try:
-        # Character length and alpha check inspired by Alan Bushell, Mentor
-        if name == '':
-            raise ValueError('Name cannot be blank')
-        elif len(name) < 2:
-            raise ValueError('Name must be at least 2 letters')
-        elif name.isalnum():
-            raise ValueError('Name must be letters only')
-        elif name.split(sep=" ", maxsplit=1) is False:
-            raise ValueError('Name has too many spaces')
+        # Character length check inspired by Alan Bushell, Mentor
+        if name == '' and len(name) < 2:
+            raise ValueError('Name must be at least 2 letters')    
+        if not re.match('^([a-z]+)( [a-z]+)*( [a-z]+)*$', name):
+            raise ValueError('You must enter only letters')
+        if not name.split(' '):
+            raise ValueError('Name must be letters only')    
     except ValueError as e:
         print(Fore.RED + f'Invalid Name: {e}. Please try again.')
         print(Style.RESET_ALL)
