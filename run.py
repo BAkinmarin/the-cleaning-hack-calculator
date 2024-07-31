@@ -59,7 +59,7 @@ def get_user_details():
 
         if all([validate_name(name), validate_mob(mob), validate_user(email)]):
             # Capitalize name once validated and before uploading to worksheet
-            name = name.capitalize()
+            name = name.title()
             clear_terminal()
             print(f"\nThanks, {name}! Now, let's get you that estimate...")
             print('Please enter room details as whole numbers.')
@@ -96,7 +96,7 @@ def validate_name(name):
     """
     try:
         # Character length and alpha check inspired by Alan Bushell, Mentor
-        if name == '' or len(name) < 2 or not name.isalpha():
+        if all([name.split(), name == '', len(name) < 2, name.isalpha()]):
             raise NameError(f'Your name must be at least 2 letters')
     except NameError as e:
         print(Fore.RED + f'Invalid Data: {e}. Please try again.')
