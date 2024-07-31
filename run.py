@@ -4,7 +4,6 @@ from google.oauth2.service_account import Credentials
 
 # Import relevant package for validation
 from email_validator import validate_email, EmailNotValidError
-import re
 
 # Import module to clear terminal
 import os
@@ -97,10 +96,8 @@ def validate_name(name):
     """
     try:
         # Character length check inspired by Alan Bushell, Mentor
-        if name == '' or len(name) < 2 or not name.isalpha():
-            print(f'Name must be at least 3 letters')    
-        elif name.split(sep=" ", maxsplit=1):
-            print('Name has too many spaces')    
+        if name == '' or len(name) < 2 or not name.isalpha() or not name.split():
+            raise ValueError(f'Must be at least 2 letters')  
     except ValueError as e:
         print(Fore.RED + f'Invalid Name: {e}. Please try again.')
         print(Style.RESET_ALL)
@@ -116,7 +113,7 @@ def validate_mob(mob):
     """
     try:
         if len(mob) != 11 or not mob.isnumeric():
-            raise ValueError(f'Your number must be 11 digits')
+            raise ValueError(f'Must be 11 digits')
     except ValueError as e:
         print(Fore.RED + f'Invalid Number: {e}. Please try again.')
         print(Style.RESET_ALL)

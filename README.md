@@ -168,18 +168,18 @@ If the error handling works as expected it will be marked as pass.
 If the error handling does not work as expected it will be marked as fail.
 
 > Enter Name
-Error Msg: Your name must be at least 2 characters. Please try again.
+Error Msg: Invalid Name: Must be at least 2 letters. Please try again.
 
 | Test | Result |
 |--|--|
 |User tried to enter a name of less than two characters|Pass|
-|User tried to enter a hyphenated name|Pass|
-|User tried to enters an empty string|Pass|
+|User tried to enter a hyphenated name|Fail|
+|User tried to enter an empty string|Pass|
 |User tried to enter a name with a space in it|Pass|
-|User tried to enter numbers|Pass|
+|User tried to enter a number|Pass|
 
 > Enter Mobile Number
-Error Msg: Your number must be 11 digits. Please try again.
+Error Msg: Invalid Number: Must be 11 digits. Please try again.
 
 | Test | Result |
 |--|--|
@@ -201,7 +201,7 @@ Error Msg: Various EmailNotValidError messages.
 |User tried to enter a special character|Pass|
 
 > Enter Property Details
-Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
+Error Msg: Invalid Data: You entered 'x'. Enter only numbers OR "0" if not applicable.
 
 | Test | Result |
 |--|--|
@@ -225,12 +225,10 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 ### Feedback Message - Details Accepted
 > Unable to get sequence of notification messages in email validation function working - program currently displays when user email is invalid but not when all details have been entered correctly. **Fixed**
 
-### Update Worksheet - Estimate Value
-> Unable to convert estimate data type to support appending to current row in worksheet.
-
 ### Validation - User Name Field
-> Unable to add validation to stop users entering numbers into name field. **Fixed**
-> Unable to add validation to accept spaces and hyphenated names. **Fixed**
+> Unable to get validation to stop users entering numbers into name field. **Fixed**
+> Unable to get validation to accept spaces. **Fixed**
+> Unable to get validation to accept hyphenated names.
 
 ### Validation - Property Details
 > Unable to handle exceptions for special characters or alphabets in number of rooms fields. **Fixed**
