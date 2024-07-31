@@ -51,9 +51,11 @@ def get_user_details():
     """
     while True:
         details_str = []
-        name = input('Enter your name: \n')
-        mob = input('Enter your mobile number: \n')
-        email = input('Enter your email address: \n')
+        # Declared as global variable for early access
+        global name
+        name = input('Enter Full Name: \n')
+        mob = input('Enter Mobile Number: \n')
+        email = input('Enter Email Address: \n')
 
         if all([validate_name(name), validate_mob(mob), validate_user(email)]):
             # Capitalize name once validated and before uploading to worksheet
@@ -72,7 +74,6 @@ def get_property_details():
     Get property details from user then run validation.
     """
     while True:
-        val = []
         bed_rooms = input('No. of bedrooms: \n')
         bath_rooms = input('No. of bathrooms (add toilets): \n')
         living_rooms = input('No. of living areas (add kitchen): \n')
@@ -81,9 +82,11 @@ def get_property_details():
         val = bed_rooms, bath_rooms, living_rooms, other_rooms
 
         if validate_rooms(val):
-            print()
+            clear_terminal()
+            print(f'Thanks, {name}! Just getting your estimate now...\n')
+            break
 
-        return val
+    return val
 
 
 def validate_name(name):
@@ -145,10 +148,12 @@ def validate_rooms(values):
     """
     try:
         [int(value) for value in values]
-        if len(values) != 4 or not values.isdigit():
-            raise ValueError('You must provide no. of rooms as whole digits')
-    except ValueError as e:
-        print(Fore.RED + f'Invalid Data: {e}. Enter 0 if not applicable.')
+        if len(values) != 4:
+            print()
+    except ValueError:
+        clear_terminal()
+        print(Fore.RED + f'Invalid Data: You entered {values}.')
+        print('Enter only numbers OR "0" if not applicable.')
         print(Style.RESET_ALL)
         return False
 
@@ -167,7 +172,6 @@ def update_worksheet(details, rooms):
     # Declared as global variable for access inside other functions
     global user_name
     user_name = user[-1][0]
-    print(f'Thanks, {user_name}! Just getting your estimate now...\n')
 
 
 def calculate_estimate(val):

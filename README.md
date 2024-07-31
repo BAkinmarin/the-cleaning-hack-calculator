@@ -215,7 +215,7 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 
 > I used the Pep8 checker tool to validate my python code to ensure it was free from errors as shown here:
 
-![Pep8](assets/testing/pep8-checker.png)
+![Pep8](assets/testing/tch-calculator-pep8-checker.png)
 
 > To keep within the length of 79 characters per line, I had to do a lot of re-coding and restructuring.
 
@@ -232,7 +232,7 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 > Unable to add validation to name to stop users entering numbers into name field. **Fixed**
 
 ### Validation - Property Details
-> Unable to handle exceptions for special characters or alphabets in number of rooms fields.
+> Unable to handle exceptions for special characters or alphabets in number of rooms fields. **Fixed**
 
 <a name="deployment"></a>
 ## Deployment
