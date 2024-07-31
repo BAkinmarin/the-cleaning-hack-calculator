@@ -96,10 +96,10 @@ def validate_name(name):
     """
     try:
         # Character length and alpha check inspired by Alan Bushell, Mentor
-        if all([name.split(), name == '', len(name) < 2, name.isalpha()]):
-            raise NameError(f'Your name must be at least 2 letters')
-    except NameError as e:
-        print(Fore.RED + f'Invalid Data: {e}. Please try again.')
+        if name == '' or len(name) < 2 or name.isalnum() or not name.split():
+            raise ValueError(f'Your name must be at least 2 letters')
+    except ValueError as e:
+        print(Fore.RED + f'Invalid Name: {e}. Please try again.')
         print(Style.RESET_ALL)
         return False
 
