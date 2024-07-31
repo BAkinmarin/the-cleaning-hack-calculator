@@ -97,12 +97,10 @@ def validate_name(name):
     """
     try:
         # Character length check inspired by Alan Bushell, Mentor
-        if name == '' and len(name) < 2:
-            raise ValueError('Name must be at least 2 letters')    
-        if not re.match('^([a-z]+)( [a-z]+)*( [a-z]+)*$', name):
-            raise ValueError('You must enter only letters')
-        if not name.split(' '):
-            raise ValueError('Name must be letters only')    
+        if name == '' or len(name) < 2 or not name.isalpha():
+            print(f'Name must be at least 3 letters')    
+        elif name.split(sep=" ", maxsplit=1):
+            print('Name has too many spaces')    
     except ValueError as e:
         print(Fore.RED + f'Invalid Name: {e}. Please try again.')
         print(Style.RESET_ALL)
