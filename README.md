@@ -61,9 +61,9 @@ This information feeds into the business owner's lead generation and management 
 
 - No. of Bathrooms 
 
-- No. of Living areas / Receptions
+- No. of Living Areas i.e. Frontroom, Kitchen
 
-- Other rooms i.e. Conservatory, Utility
+- Other Rooms i.e. Conservatory, Utility
 
 This information allows the business owner to predict how long a job might take ans assign resources accordingly. 
 
@@ -91,9 +91,9 @@ This information allows the business owner to predict how long a job might take 
 
 ![No. of Bathrooms](assets/readme/tch-calculator-bathrooms-prompt.png)
 
-![No. of Living areas](assets/readme/tch-calculator-living-areas-prompt.png)
+![No. of Living Areas](assets/readme/tch-calculator-living-areas-prompt.png)
 
-![Any other rooms](assets/readme/tch-calculator-other-rooms-prompt.png)
+![Any Other Rooms](assets/readme/tch-calculator-other-rooms-prompt.png)
 
 > The details provided will be displayed to the user along with their estimate.
 
@@ -238,7 +238,6 @@ Error Msg: You must provide number of rooms. Please enter 0 if not applicable.
 <a name="deployment"></a>
 ## Deployment
 
-####
 > To deploy the project to Heroku, I followed the steps outlined below:
 
 1. Prepare run.py file by adding a new line character ("\n") at the end of the text inside all input methods.

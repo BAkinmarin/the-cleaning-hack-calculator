@@ -2,8 +2,9 @@
 import gspread
 from google.oauth2.service_account import Credentials
 
-# Import relevant package for email validation
+# Import relevant package for validation
 from email_validator import validate_email, EmailNotValidError
+import re
 
 # Import module to clear terminal
 import os
@@ -91,13 +92,19 @@ def get_property_details():
 
 def validate_name(name):
     """
-    Checks that user's name is provided not left blank.
-    Raises UnicodeError if validation fails.
+    Checks that user's name is a valid format and not blank.
+    Raises relevant ValueError if validation fails.
     """
     try:
         # Character length and alpha check inspired by Alan Bushell, Mentor
-        if name == '' or len(name) < 2 or name.isalnum() or not name.split():
-            raise ValueError(f'Your name must be at least 2 letters')
+        if name == '':
+            raise ValueError('Name cannot be blank')
+        elif len(name) < 2:
+            raise ValueError('Name must be at least 2 letters')
+        elif name.isalnum():
+            raise ValueError('Name must be letters only')
+        elif name.split(sep=" ", maxsplit=1) is False:
+            raise ValueError('Name has too many spaces')
     except ValueError as e:
         print(Fore.RED + f'Invalid Name: {e}. Please try again.')
         print(Style.RESET_ALL)
