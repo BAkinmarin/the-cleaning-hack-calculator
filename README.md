@@ -2,7 +2,7 @@
 
 
 ## A Python command line calculator
-> This application is a Python-based calculator for a real business, The Cleaning Hack. The application is used to produce a free cleaning estimate for potential clients. The application requires the user to enter their name, mobile number and email which is validated prior to entering the details required to produce an estimate such as number of bedrooms, bathrooms, living spaces. These details are then uploaded to a Google Worksheet for the business owner to reference in follow-up conversations with the prospective client.
+> This application is a Python-based calculator for a real business, The Cleaning Hack. The application is used to produce a free cleaning estimate for potential clients. The application requires the user to enter their full name, mobile number and email address which is validated prior to prompting the user to enter the details required to produce an estimate i.e. number of bedrooms, bathrooms, living spaces and any other rooms. These details are also validated prior to them being uploaded to a Google Worksheet which the business owner will reference when initiating follow-up actions with the client.
 
 #### Designed and Developed by Bola Akinmarin
 
@@ -33,11 +33,11 @@
 
 > For my portfolio project 3, I wanted to address a real need hence my decision to create a cleaning estimate calculator for The Cleaning Hack, a real and active cleaning business. 
 
-> Upon confirmation from the business owner that there was a gap in their processes where automation of cleaning estimates and, lead tracking were concerned, I was resolved in my decision.
+> After discussing with the business owner and identifying a gap in their internal processes, particularly in automating cleaning estimates and lead tracking, I was confident in my decision. 
 
-> Utilising Lucid Chart, I created a flow diagram to help visualise the steps and logic I needed for the project design and execution to be as efficient as possible.
+> Using Lucid Chart, I created a flow diagram to help visualise the steps and logic needed to make the project design and execution as efficient as possible.
 
-> Please see the below flow chart to better understand the initial design and concept.
+> See flow chart below for a visual of initial design and concept.
 ![Lucid Flow Chart](assets/readme/tch-calculator-flowchart.png)
 
 ### Pre-Planning Structure
@@ -52,7 +52,7 @@
 
 - Email Address
 
-This information feeds into the business owner's lead generation and management system.
+This information, once captured, feeds into the business owner's lead generation and management system.
 
 
 #### Property Details
@@ -65,27 +65,27 @@ This information feeds into the business owner's lead generation and management 
 
 - Other Rooms i.e. Conservatory, Utility
 
-This information allows the business owner to predict how long a job might take ans assign resources accordingly. 
+This information is valuable to the business owner as it helps predict the duration of a job so resources such as materials, equipment and labour can be allocated accordingly. 
 
 
 ## Program Flow
-> When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program as seen below.
+> When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program.
 
-> The user will also be prompted to enter their name, followed by their mobile number and email address which will be validated before they can then move on to entering relevant property details.
+> Simultaneaously, the user will be prompted to enter their full name, mobile number and email address, which will be validated before they can proceed to the next step. See below:
 
-![Welcome Page](assets/readme/tch-calculator-welcome.png)
+![Welcome Page and Instructions](assets/readme/tch-calculator-welcome.png)
 
-> If validation fails at this stage, the user will be shown the corresponding error message or messages. The following images show user tries to submit an alphanumeric name, incorrect mobile number (i.e. less than 11 digits) and incorrect email format:
+> If validation fails at this stage, the user will see the corresponding error message(s) based on the specific issue. The following images illustrate attempts to submit an alphanumeric name, an incorrect mobile number (fewer than 11 digits), and an incorrect email format. See below:
 
-![Invalid Name](assets/readme/tch-calculator-invalid-name.png)
+![Invalid Name Message](assets/readme/tch-calculator-invalid-name.png)
 
-![Invalid Mobile](assets/readme/tch-calculator-invalid-mobile.png)
+![Invalid Mobile Message](assets/readme/tch-calculator-invalid-mobile.png)
 
-![Invalid Email](assets/readme/tch-calculator-invalid-email.png)
+![Invalid Email Message](assets/readme/tch-calculator-invalid-email.png)
 
-![All Details Invalid](assets/readme/tch-calculator-all-details-invalid.png)
+![Name, Mobile and Email Invalid Message](assets/readme/tch-calculator-all-details-invalid.png)
 
-> Next, the user will be asked to provide number of bedrooms, bathrooms, living areas / receptions and any other rooms:
+> If validation passes, the user will be prompted to provide the number of bedrooms, bathrooms, living areas / receptions and any other rooms. See below:
 
 ![No. of Bedrooms](assets/readme/tch-calculator-bedrooms-prompt.png)
 
@@ -95,17 +95,21 @@ This information allows the business owner to predict how long a job might take 
 
 ![Any Other Rooms](assets/readme/tch-calculator-other-rooms-prompt.png)
 
-> The details provided will be displayed to the user along with their estimate.
+> If validation fails, the user will see an error message and then be prompted to re-enter information on number of bedrooms, bathrooms, living areas / receptions and any other rooms. See below:
 
-> Additionally, the user will be asked if they would like to get a new estimate or exit the program as seen below:
+![Invalid Room Details](assets/readme/tch-calculator-invalid-rooms.png)
+
+> If validation is successful, the user will see a summary of their entry along with a cleaning estimate.
+
+> Additionally, the user will be asked to enter "Y" if they would like to obtain a new estimate or any other key to exit the program. See below:
 
 ![Cleaning Estimate](assets/readme/tch-calculator-estimate.png)
 
-> If the user selects new estimate, they will be asked to enter property details for a new estimate:
+> If the user requests a new estimate, they will be again be prompted to provide number of bedrooms, bathrooms, living areas / receptions and any other rooms. See below:
 
 ![New Details](assets/readme/tch-calculator-new-room-details-prompt.png)
 
-> If the user selects exit, they will be presented with an exit message and the program will stop running:
+> If the user chooses to exit the program, they will see an exit message as shown below:
 
 ![Exit Message](assets/readme/tch-calculator-exit-message.png)
 
@@ -113,9 +117,9 @@ This information allows the business owner to predict how long a job might take 
 
 ### Features left to implement
 
-- Functionality to prompt user re-entry specifically for data input which fails validation.
+- Functionality to prompt the user to re-enter only the specific data that fails validation.
 
-- Functionality to accept only UK numbers as valid input.
+- Functionality to accept only UK numbers as valid.
 
 
 <a name="tech"></a>
