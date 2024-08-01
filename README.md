@@ -2,7 +2,7 @@
 
 
 ## A Python command line calculator
-> This application is a Python based calculation for a real cleaning company, The Cleaning Hack, which is used to produce a free cleaning estimate for potential clients. The application requires the user to enter their name, mobile number and email which is validated prior to entering the details required to produce an estimate such as number of bedrooms, bathrooms, living spaces. These details are then uploaded to a Google Worksheet for the business owner to reference in follow-up conversations with the prospective client.
+> This application is a Python-based calculator for a real business, The Cleaning Hack. The application is used to produce a free cleaning estimate for potential clients. The application requires the user to enter their name, mobile number and email which is validated prior to entering the details required to produce an estimate such as number of bedrooms, bathrooms, living spaces. These details are then uploaded to a Google Worksheet for the business owner to reference in follow-up conversations with the prospective client.
 
 #### Designed and Developed by Bola Akinmarin
 
@@ -75,7 +75,7 @@ This information allows the business owner to predict how long a job might take 
 
 ![Welcome Page](assets/readme/tch-calculator-welcome.png)
 
-> If validation fails at this stage, the user will be shown the corresponding error message or messages depending on the exception raised:
+> If validation fails at this stage, the user will be shown the corresponding error message or messages. The following images show user tries to submit an alphanumeric name, incorrect mobile number (i.e. less than 11 digits) and incorrect email format:
 
 ![Invalid Name](assets/readme/tch-calculator-invalid-name.png)
 
@@ -113,9 +113,9 @@ This information allows the business owner to predict how long a job might take 
 
 ### Features left to implement
 
-> Functionality to prompt user to enter only the specific piecce of information which fails validation.
+- Functionality to prompt user re-entry specifically for data input which fails validation.
 
-> Functionality to validate mobile number to ensure only UK mobile numbers are provided.
+- Functionality to accept only UK numbers as valid input.
 
 
 <a name="tech"></a>
@@ -159,7 +159,6 @@ Used for version control.
 |If user selects obtain another quote, user is again prompted to enter new property details|Pass|
 |Once new property details have been entered, user is provided with new estimate|Pass|
 |If user selects exit program, user is shown exit message and program ends|Pass|
-|Program is accessible on mobile phones|Pass|
 
 #### User testing
 
@@ -168,7 +167,9 @@ If the error handling works as expected it will be marked as pass.
 If the error handling does not work as expected it will be marked as fail.
 
 > Enter Name
-Error Msg: Invalid Name: Must be at least 2 letters. Please try again.
+Error Msg: Invalid Name: Must not be blank!
+Error Msg: Invalid Name: Min 2 characters and letters only!
+Error Msg: Invalid Name: {part} not accepted!
 
 | Test | Result |
 |--|--|
@@ -176,7 +177,7 @@ Error Msg: Invalid Name: Must be at least 2 letters. Please try again.
 |User tried to enter a hyphenated name|Fail|
 |User tried to enter an empty string|Pass|
 |User tried to enter a name with a space in it|Pass|
-|User tried to enter a number|Pass|
+|User tried to enter an alphanumeric name|Pass|
 
 > Enter Mobile Number
 Error Msg: Invalid Number: Must be 11 digits. Please try again.

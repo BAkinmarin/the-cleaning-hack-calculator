@@ -95,8 +95,9 @@ def validate_name(name):
     Validates name length and disallows numbers.
     Prints error message if specific validation fails.
     """
-    # Inspired by collection of questions and answers on stack overflow
-    # Removes leading whitespace from name if found and runs validation 
+    # Inspired by collection of questions and results on stack overflow
+    # Character length check inspired by Alan Bushell, Mentor
+    # Removes leading whitespace from name if found and runs validation
     stripped_name = name.strip()
     if not stripped_name:
         print(Fore.RED + 'Invalid Name: Must not be blank!')
