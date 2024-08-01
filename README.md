@@ -298,6 +298,9 @@ Multiple resources used to better understand the logic and flow of functions and
 ### [Finxter](https://blog.finxter.com/how-to-print-italic-text-in-python/)
 > Useful guide for adding styles to text.
 
+### [Stack Overflow](https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response)
+> Useful for resolving name validation issues encountered when using try and except statements. Provided better understanding of various methods of name input validation using if-else statements.
+
 
 <a name="content"></a>
 ## Content and Resources
@@ -309,7 +312,10 @@ Multiple resources used to better understand the logic and flow of functions and
 > Project created in line with course content and within project 3 scope.
 
 ### Stack Overflow
-> Used to review my own code to ensure simplicity where possible. 
+> Used to review my own code to ensure simplicity where possible, and to navigate complexity where unavoidable.
+
+### Medium
+> Online publishing platform with distraction-free access to insightful articles by other Software Developers on specific topics.
 
 ### Youtube
 > One of the most accessible learning platforms with a global reach. Very useful in broadening my approach to coding, providing insights into coding concepts from different perspectives.

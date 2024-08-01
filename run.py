@@ -91,17 +91,29 @@ def get_property_details():
 
 def validate_name(name):
     """
-    Checks that user's name is a valid format and not blank.
-    Raises relevant ValueError if validation fails.
+    Checks that user name input is valid and field is not blank.
+    Validates name length and disallows numbers.
+    Prints error message if specific validation fails.
     """
-    try:
-        # Character length check inspired by Alan Bushell, Mentor
-        if name == '' or len(name) < 2 or not name.isalpha() or not name.split():
-            raise ValueError(f'Must be at least 2 letters')  
-    except ValueError as e:
-        print(Fore.RED + f'Invalid Name: {e}. Please try again.')
+    # Inspired by collection of questions and answers on stack overflow
+    # Removes leading whitespace from name if found and runs validation 
+    stripped_name = name.strip()
+    if not stripped_name:
+        print(Fore.RED + 'Invalid Name: Must not be blank!')
         print(Style.RESET_ALL)
         return False
+
+    name_parts = stripped_name.split()
+    if len(name_parts) < 2:
+        print(Fore.RED + 'Invalid Name: Min 2 characters and letters only!')
+        print(Style.RESET_ALL)
+        return False
+
+    for part in name_parts:
+        if not part.isalpha():
+            print(Fore.RED + f'Invalid Name: {part} not accepted!')
+            print(Style.RESET_ALL)
+            return False
 
     return True
 
