@@ -150,7 +150,7 @@ Used for version control.
 | Test | Result |
 |--|--|
 |On run program, the welcome message and instructions appear|Pass|
-|After instructions, user is prompted for name|Pass|
+|After instructions, user is prompted for their full name|Pass|
 |Once name is input user is prompted for mobile number|Pass|
 |Once mobile number is input, user is prompted for email address|Pass|
 |Feedback message shows with further instructions on how to enter property details|Pass|
@@ -171,9 +171,9 @@ If the error handling works as expected it will be marked as pass.
 If the error handling does not work as expected it will be marked as fail.
 
 > Enter Name
-Error Msg: Invalid Name: Must not be blank!
-Error Msg: Invalid Name: Min 2 characters and letters only!
-Error Msg: Invalid Name: {part} not accepted!
+- Error Msg1: Invalid Name: Must not be blank!
+- Error Msg2: Invalid Name: Min 2 characters and letters only!
+- Error Msg3: Invalid Name: {part} not accepted!
 
 | Test | Result |
 |--|--|
@@ -184,7 +184,7 @@ Error Msg: Invalid Name: {part} not accepted!
 |User tried to enter an alphanumeric name|Pass|
 
 > Enter Mobile Number
-Error Msg: Invalid Number: Must be 11 digits. Please try again.
+- Error Msg: Invalid Number: Must be 11 digits. Please try again.
 
 | Test | Result |
 |--|--|
@@ -195,7 +195,7 @@ Error Msg: Invalid Number: Must be 11 digits. Please try again.
 |User tried to enter a special character|Pass|
 
 > Enter Email Address
-Error Msg: Various EmailNotValidError messages.
+- Error Msg: Various messages predefined in the 'email_validator' package import.
 
 | Test | Result |
 |--|--|
@@ -222,7 +222,7 @@ Error Msg: Invalid Data: You entered 'x'. Enter only numbers OR "0" if not appli
 
 ![Pep8](assets/testing/tch-calculator-pep8-checker.png)
 
-> To keep within the length of 79 characters per line, I had to do a lot of re-coding and restructuring.
+> To maintain a line length of 79 characters, I had to extensively recode and restructure the program.
 
 <a name="bugs"></a>
 ## **Bugs**
@@ -289,10 +289,10 @@ Error Msg: Invalid Data: You entered 'x'. Enter only numbers OR "0" if not appli
 Multiple resources used to better understand the logic and flow of functions and capabilities of Python.
 
 ### [Stack Overflow](https://stackoverflow.com/questions/8022530/how-to-check-for-valid-email-address)
-> Useful for learning how to validate email addresses.
+> Useful for learning how to validate email addresses and led to the import of an email_validator package.
 
 ### [PyPi](https://pypi.org/project/email-validator/)
-> A robust email address syntax validation library installed for use with this project.
+> A robust email address syntax validation library installed for use in this project.
 
 ### [PyPi](https://pypi.org/project/colorama/)
 > Useful for adding ANSI escape character sequences to add color to terminal text.
@@ -301,7 +301,7 @@ Multiple resources used to better understand the logic and flow of functions and
 > Useful guide by Sogo Ogundowole on GSpread: Automate Google Sheet with Python. Helped broaden my understanding of GSpread methods and applications.
 
 ### [Finxter](https://blog.finxter.com/how-to-print-italic-text-in-python/)
-> Useful guide for adding styles to text.
+> Useful guide for adding styles to text in terminal.
 
 ### [Stack Overflow](https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response)
 > Useful for resolving name validation issues encountered when using try and except statements. Provided better understanding of various methods of name input validation using if-else statements.
@@ -322,8 +322,6 @@ Multiple resources used to better understand the logic and flow of functions and
 ### Medium
 > Online publishing platform with distraction-free access to insightful articles by other Software Developers on specific topics.
 
-### Youtube
-> One of the most accessible learning platforms with a global reach. Very useful in broadening my approach to coding, providing insights into coding concepts from different perspectives.
 
 <a name="acknowlegements"></a>
 ## Acknowledgements
@@ -332,7 +330,7 @@ Multiple resources used to better understand the logic and flow of functions and
 > My mentor who provided me with great feedback and guidance at the inception of this project, helping to keep at the forefront the requirements for a successful project.
 
 ### Code Community
-> Other software developers who gave feedback on their experience whilst interacting with The cleaning Hack Calculator.
+> Other software developers who gave feedback on their experience whilst interacting with The Cleaning Hack Calculator.
 
 ### Family
 > Special thanks to my family for supporting with user testing and providing feedback on flow and experience.
