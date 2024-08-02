@@ -2,7 +2,11 @@
 
 
 ## A Python command line calculator
-> This application is a Python-based calculator for a real business, The Cleaning Hack. The application is used to produce a free cleaning estimate for potential clients. The application requires the user to enter their full name, mobile number and email address which is validated prior to prompting the user to enter the details required to produce an estimate i.e. number of bedrooms, bathrooms, living spaces and any other rooms. These details are also validated prior to them being uploaded to a Google Worksheet which the business owner will reference when initiating follow-up actions with the client.
+> This application is a Python-based calculator designed for The Cleaning Hack, a real business. It generates free cleaning estimates for potential clients.
+
+> Users are required to enter their full name, mobile number, and email address, which are validated before they can proceed to input details needed for the estimate, such as the number of bedrooms, bathrooms, living spaces and, any other rooms.
+
+> These details are also validated before being uploaded to a Google Worksheet, which the business owner uses to initiate follow-up actions with the client.
 
 #### Designed and Developed by Bola Akinmarin
 
@@ -31,9 +35,9 @@
 <a name="plan"></a>
 ### Pre-project Planning
 
-> For my portfolio project 3, I wanted to address a real need hence my decision to create a cleaning estimate calculator for The Cleaning Hack, a real and active cleaning business. 
+> For my third portfolio project, I aimed to address a real need, hence the idea to create a cleaning estimate calculator for The Cleaning Hack, an active cleaning business.
 
-> After discussing with the business owner and identifying a gap in their internal processes, particularly in automating cleaning estimates and lead tracking, I was confident in my decision. 
+> After discussing with the business owner and identifying a gap in their internal processes, particularly in automating cleaning estimates and lead tracking, I was confident in my decision.
 
 > Using Lucid Chart, I created a flow diagram to help visualise the steps and logic needed to make the project design and execution as efficient as possible.
 
@@ -232,7 +236,9 @@ Error Msg: Invalid Data: You entered 'x'. Enter only numbers OR "0" if not appli
 
 ### Validation - User Name Field
 > Unable to get validation to stop users entering numbers into name field. **Fixed**
+
 > Unable to get validation to accept spaces. **Fixed**
+
 > Unable to get validation to accept hyphenated names.
 
 ### Validation - Property Details
