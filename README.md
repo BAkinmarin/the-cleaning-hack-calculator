@@ -2,25 +2,26 @@
 
 
 ## A Python command line calculator
-> This application is a Python-based calculator designed for The Cleaning Hack, a real business. It generates free cleaning estimates for potential clients.
+This application is a Python-based calculator designed for The Cleaning Hack, a real business. It generates free cleaning estimates for potential clients.
 
-> Users are required to enter their full name, mobile number, and email address, which are validated before they can proceed to input details needed for the estimate, such as the number of bedrooms, bathrooms, living spaces and, any other rooms.
+Users are required to enter their full name, mobile number, and email address, which are validated before they can proceed to input details needed for the estimate, such as the number of bedrooms, bathrooms, living spaces and, any other rooms.
 
-> These details are also validated before being uploaded to a Google Worksheet, which the business owner uses to initiate follow-up actions with the client.
+These details are also validated before being uploaded to a Google Worksheet, which the business owner uses to initiate follow-up actions with the client.
 
 #### Designed and Developed by Bola Akinmarin
 
-### **[Live site](https://the-cleaning-hack-calculator-7f6b677fafbc.herokuapp.com/)**
+
+## [Live Site](https://the-cleaning-hack-calculator-7f6b677fafbc.herokuapp.com/)
 
 
-### **[Repository](https://github.com/BAkinmarin/the-cleaning-hack-calculator)**
+## [Repository](https://github.com/BAkinmarin/the-cleaning-hack-calculator)
 
   
-## Table of contents
+# Table of Contents
 
 
- 1. [ Pre-Project Planning ](#plan)
- 2. [ Existing Features ](#features)
+ 1. [ Project Planning ](#plan)
+ 2. [ Features ](#features)
  3. [ Future Features ](#left)  
  4. [ Technology used ](#tech) 
  5. [ Testing ](#testing)  
@@ -31,23 +32,34 @@
  10. [ Acknowledgements](#acknowledgements)  
 
 
-## Flow
 
 <a name="plan"></a>
-### Pre-project Planning
+# Project Planning
 
-> For my third portfolio project, I aimed to address a real need, hence the idea to create a cleaning estimate calculator for The Cleaning Hack, an active cleaning business.
+For my third portfolio project, I aimed to address a real need, hence the idea to create a cleaning estimate calculator for The Cleaning Hack, an active cleaning business.
 
-> After discussing with the business owner and identifying a gap in their internal processes, particularly in automating cleaning estimates and lead tracking, I was confident in my decision.
+After discussing with the business owner and identifying a gap in their internal processes, particularly in automating cleaning estimates and lead tracking, I was confident in my decision.
 
-> Using Lucid Chart, I created a flow diagram to help visualise the steps and logic needed to make the project design and execution as efficient as possible.
+### Strategy
 
-> See flow chart below for a visual of initial design and concept.
-![Lucid Flow Chart](assets/readme/tch-calculator-flowchart.png)
+#### Business Owner
 
-### Pre-Planning Structure
+As the owner, I want to provide automated quotes to prospects.
+
+As the owner, I want prospects to have transparency on pricing prior to booking.
+
+As the owner, I want to save resources by automating a quote without going to the property.
+
+As the owner, I want authorised staff to follow up efficiently with a readily available quote.
+
+As the owner, I want all quotes provided to be automatically saved to a secure file.
 
 ### Structure
+
+Using Lucid Chart, I created a flow diagram to help visualise the steps and logic needed to make the project design and execution as efficient as possible.
+
+See flow chart below for a visual of initial design and concept.
+![Lucid Flow Chart](assets/readme/tch-calculator-flowchart.png)
 
 #### User Details
 
@@ -76,15 +88,15 @@ This information is valuable to the business owner as it helps predict the durat
 ## Program Flow
 
 <a name="features"></a>
-# Existing Features
+# Features
 
-> When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program.
+When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program.
 
-> Simultaneaously, the user will be prompted to enter their full name, mobile number and email address, which will be validated before they can proceed to the next step. See below:
+Simultaneaously, the user will be prompted to enter their full name, mobile number and email address, which will be validated before they can proceed to the next step. See below:
 
 ![Welcome Page and Instructions](assets/readme/tch-calculator-welcome.png)
 
-> If validation fails at this stage, the user will see the corresponding error message(s) based on the specific issue. The following images illustrate attempts to submit an alphanumeric name, an incorrect mobile number (fewer than 11 digits), and an incorrect email format. See below:
+If validation fails at this stage, the user will see the corresponding error message(s) based on the specific issue. The following images illustrate attempts to submit an alphanumeric name, an incorrect mobile number (fewer than 11 digits), and an incorrect email format. See below:
 
 ![Invalid Name Message](assets/readme/tch-calculator-invalid-name.png)
 
@@ -94,7 +106,7 @@ This information is valuable to the business owner as it helps predict the durat
 
 ![Name, Mobile and Email Invalid Message](assets/readme/tch-calculator-all-details-invalid.png)
 
-> If validation passes, the user will be prompted to provide the number of bedrooms, bathrooms, living areas / receptions and any other rooms. See below:
+If validation passes, the user will be prompted to provide the number of bedrooms, bathrooms, living areas / receptions and any other rooms. See below:
 
 ![No. of Bedrooms](assets/readme/tch-calculator-bedrooms-prompt.png)
 
@@ -104,26 +116,31 @@ This information is valuable to the business owner as it helps predict the durat
 
 ![Any Other Rooms](assets/readme/tch-calculator-other-rooms-prompt.png)
 
-> If validation fails, the user will see an error message and then be prompted to re-enter information on number of bedrooms, bathrooms, living areas / receptions and any other rooms. See below:
+If validation fails, the user will see an error message and then be prompted to re-enter information on number of bedrooms, bathrooms, living areas / receptions and any other rooms. See below:
 
 ![Invalid Room Details](assets/readme/tch-calculator-invalid-rooms.png)
 
-> If validation is successful, the user will see a summary of their entry along with a cleaning estimate.
+If validation is successful, the user will see a summary of their entry along with a cleaning estimate.
 
-> Additionally, the user will be asked to enter "Y" if they would like to obtain a new estimate or any other key to exit the program. See below:
+Additionally, the user will be asked to enter "Y" if they would like to obtain a new estimate or any other key to exit the program. See below:
 
 ![Cleaning Estimate](assets/readme/tch-calculator-estimate.png)
 
-> If the user requests a new estimate, they will be again be prompted to provide number of bedrooms, bathrooms, living areas / receptions and any other rooms. See below:
+If the user requests a new estimate, they will be again be prompted to provide number of bedrooms, bathrooms, living areas / receptions and any other rooms. See below:
 
 ![New Details](assets/readme/tch-calculator-new-room-details-prompt.png)
 
-> If the user chooses to exit the program, they will see an exit message as shown below:
+If the user chooses to exit the program, they will see an exit message as shown below:
 
 ![Exit Message](assets/readme/tch-calculator-exit-message.png)
 
+See below sample data successfully uploaded to worksheet.
+
+![Upload Successful](assets/readme/tch-calculator-sample-upload.png)
+
+
 <a name="left"></a>
-### Future Features
+# Future Features
 
 - Functionality to prompt the user to re-enter only the specific data that fails validation.
 
@@ -132,11 +149,12 @@ This information is valuable to the business owner as it helps predict the durat
 
 <a name="tech"></a>
 # Technology Used
+
 ### Python
 Used to create the application.
 
 ### Heroku
-Used to deploy and host the application.
+Used to deploy and host the terminal application.
 
 ### Github
 Used to store the code.
@@ -146,6 +164,10 @@ IDE used for creating the application.
 
 ### Git
 Used for version control.
+
+### Google Sheets
+Used to securely store user contact and property details.
+
 
 <a name="testing"></a>
 # Testing
@@ -177,7 +199,7 @@ The following tests are on error handling throughout the project.
 If the error handling works as expected it will be marked as pass.
 If the error handling does not work as expected it will be marked as fail.
 
-> Enter Name
+Enter Name
 - Error Msg1: Invalid Name: Must not be blank!
 - Error Msg2: Invalid Name: Min 2 characters and letters only!
 - Error Msg3: Invalid Name: {part} not accepted!
@@ -190,7 +212,7 @@ If the error handling does not work as expected it will be marked as fail.
 |User tried to enter a name with a space in it|Pass|
 |User tried to enter an alphanumeric name|Pass|
 
-> Enter Mobile Number
+Enter Mobile Number
 - Error Msg: Invalid Number: Must be 11 digits. Please try again.
 
 | Test | Result |
@@ -201,7 +223,7 @@ If the error handling does not work as expected it will be marked as fail.
 |User tried to enter a symbol|Pass|
 |User tried to enter a special character|Pass|
 
-> Enter Email Address
+Enter Email Address
 - Error Msg: Various messages predefined in the 'email_validator' package import.
 
 | Test | Result |
@@ -212,7 +234,7 @@ If the error handling does not work as expected it will be marked as fail.
 |User tried to enter email without preceeding name before @ symbol|Pass|
 |User tried to enter a special character|Pass|
 
-> Enter Property Details
+Enter Property Details
 Error Msg: Invalid Data: You entered 'x'. Enter only numbers OR "0" if not applicable.
 
 | Test | Result |
@@ -225,14 +247,14 @@ Error Msg: Invalid Data: You entered 'x'. Enter only numbers OR "0" if not appli
 
 ### Pep8 Checker tool
 
-> I used the Pep8 checker tool to validate my python code to ensure it was free from errors as shown here:
+I used the Pep8 checker tool to validate my python code to ensure it was free from errors as shown here:
 
 ![Pep8](assets/testing/tch-calculator-pep8-checker.png)
 
-> To maintain a line length of 79 characters, I had to extensively recode and restructure the program.
+To maintain a line length of 79 characters, I had to extensively recode and restructure the program.
 
 <a name="bugs"></a>
-## Bugs
+# Bugs
 
 ### Solved Bugs
 
@@ -266,9 +288,9 @@ Validation - User Name Field
 
 
 <a name="deployment"></a>
-## Deployment
+# Deployment
 
-> To deploy the project to Heroku, I followed the steps outlined below:
+To deploy the project to Heroku, I followed the steps outlined below:
 
 1. Prepare run.py file by adding a new line character ("\n") at the end of the text inside all input methods.
 
@@ -311,53 +333,53 @@ Validation - User Name Field
 17. Click 'Open App' to launch application.
 
 <a name="credits"></a>
-## Credits
+# Credits
 
 Multiple resources used to better understand the logic and flow of functions and capabilities of Python.
 
 ### [Stack Overflow](https://stackoverflow.com/questions/8022530/how-to-check-for-valid-email-address)
-> Useful for learning how to validate email addresses and led to the import of an email_validator package.
+Useful for learning how to validate email addresses and led to the import of an email_validator package.
 
 ### [PyPi](https://pypi.org/project/email-validator/)
-> A robust email address syntax validation library installed for use in this project.
+A robust email address syntax validation library installed for use in this project.
 
 ### [PyPi](https://pypi.org/project/colorama/)
-> Useful for adding ANSI escape character sequences to add color to terminal text.
+Useful for adding ANSI escape character sequences to add color to terminal text.
 
 ### [Medium](https://medium.com/hacktive-devs/gspread-automate-google-sheet-with-python-dc1fa7c65c21)
-> Useful guide by Sogo Ogundowole on GSpread: Automate Google Sheet with Python. Helped broaden my understanding of GSpread methods and applications.
+Useful guide by Sogo Ogundowole on GSpread: Automate Google Sheet with Python. Helped broaden my understanding of GSpread methods and applications.
 
 ### [Finxter](https://blog.finxter.com/how-to-print-italic-text-in-python/)
-> Useful guide for adding styles to text in terminal.
+Useful guide for adding styles to text in terminal.
 
 ### [Stack Overflow](https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response)
-> Useful for resolving name validation issues encountered when using try and except statements. Provided better understanding of various methods of name input validation using if-else statements.
+Useful for resolving name validation issues encountered when using try and except statements. Provided better understanding of various methods of name input validation using if-else statements.
 
 
 <a name="content"></a>
-## Content and Resources
+# Content and Resources
 
 ### w3 schools
-> Used to reference Python Structure and play around with code ideas prior to including them in my project.
+Used to reference Python Structure and play around with code ideas prior to including them in my project.
 
 ### Code Institute
-> Project created in line with course content and within project 3 scope.
+Project created in line with course content and within project 3 scope.
 
 ### Stack Overflow
-> Used to review my own code to ensure simplicity where possible, and to navigate complexity where unavoidable.
+Used to review my own code to ensure simplicity where possible, and to navigate complexity where unavoidable.
 
 ### Medium
-> Online publishing platform with distraction-free access to insightful articles by other Software Developers on specific topics.
+Online publishing platform with distraction-free access to insightful articles by other Software Developers on specific topics.
 
 
 <a name="acknowlegements"></a>
-## Acknowledgements
+# Acknowledgements
 
 ### Alan Bushell
-> My mentor who provided me with great feedback and guidance at the inception of this project, helping to keep at the forefront the requirements for a successful project.
+My mentor who provided me with great feedback and guidance at the inception of this project, helping to keep at the forefront the requirements for a successful project.
 
 ### Code Community
-> Other software developers who gave feedback on their experience whilst interacting with The Cleaning Hack Calculator.
+Other software developers who gave feedback on their experience whilst interacting with The Cleaning Hack Calculator.
 
 ### Family
-> Special thanks to my family for supporting with user testing and providing feedback on flow and experience.
+Special thanks to my family for supporting with user testing and providing feedback on flow and experience.
