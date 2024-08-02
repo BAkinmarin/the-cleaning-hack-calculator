@@ -19,15 +19,16 @@
 ## Table of contents
 
 
- 1. [ Pre-Project Planning ](#plan)  
- 2. [ Features Left to Implement ](#left)  
- 3. [ Technology used ](#tech) 
- 4. [ Testing ](#testing)  
- 5. [ Bugs ](#bugs)  
- 6. [ Deployment](#deployment)
- 7. [ Credits](#credits)
- 8. [ Content](#content)  
- 9. [ Acknowledgements](#acknowledgements)  
+ 1. [ Pre-Project Planning ](#plan)
+ 2. [ Existing Features ](#features)
+ 3. [ Future Features ](#left)  
+ 4. [ Technology used ](#tech) 
+ 5. [ Testing ](#testing)  
+ 6. [ Bugs ](#bugs)  
+ 7. [ Deployment](#deployment)
+ 8. [ Credits](#credits)
+ 9. [ Content](#content)  
+ 10. [ Acknowledgements](#acknowledgements)  
 
 
 ## Flow
@@ -73,6 +74,10 @@ This information is valuable to the business owner as it helps predict the durat
 
 
 ## Program Flow
+
+<a name="features"></a>
+# Existing Features
+
 > When the user loads the program, they are presented with a welcome message and instructions on how to interact with the program.
 
 > Simultaneaously, the user will be prompted to enter their full name, mobile number and email address, which will be validated before they can proceed to the next step. See below:
@@ -118,8 +123,7 @@ This information is valuable to the business owner as it helps predict the durat
 ![Exit Message](assets/readme/tch-calculator-exit-message.png)
 
 <a name="left"></a>
-
-### Features left to implement
+### Future Features
 
 - Functionality to prompt the user to re-enter only the specific data that fails validation.
 
@@ -145,7 +149,6 @@ Used for version control.
 
 <a name="testing"></a>
 # Testing
-
 
 ### Testing Phase
 
@@ -229,20 +232,38 @@ Error Msg: Invalid Data: You entered 'x'. Enter only numbers OR "0" if not appli
 > To maintain a line length of 79 characters, I had to extensively recode and restructure the program.
 
 <a name="bugs"></a>
-## **Bugs**
+## Bugs
 
-### Feedback Message - Details Accepted
-> Unable to get sequence of notification messages in email validation function working - program currently displays when user email is invalid but not when all details have been entered correctly. **Fixed**
+### Solved Bugs
 
-### Validation - User Name Field
-> Unable to get validation to stop users entering numbers into name field. **Fixed**
+Feedback Message - Details Accepted
 
-> Unable to get validation to accept spaces. **Fixed**
+- Unable to get sequence of notification messages in email validation function working. Feedback displayed when email is invalid but not when all details have been entered correctly. 
 
-> Unable to get validation to accept hyphenated names.
+  - Fixed this by moving the feedback message from update_worksheet to get_user_details.
 
-### Validation - Property Details
-> Unable to handle exceptions for special characters or alphabets in number of rooms fields. **Fixed**
+Validation - User Name Field
+
+- Unable to get validation to stop users entering numbers in name field.
+
+  - Fixed this by switching from try and except statements to if and print statements.
+
+- Unable to get validation to accept spaces in name field.
+
+  - Fixed this by adjusting to request user inputs their full name, as preferred by The Cleaning Hack owner.
+
+Validation - Property Details
+
+- Unable to handle exceptions for special characters or alphabets in number of rooms fields.
+
+  - Fixed this by adopting Code Institute's Love Sandwiches data validation code using try and except statements to convert string input to integers.
+
+### Unsolved Bugs
+
+Validation - User Name Field
+
+- Unable to get name validation code to allow hyphenated names.
+
 
 <a name="deployment"></a>
 ## Deployment
